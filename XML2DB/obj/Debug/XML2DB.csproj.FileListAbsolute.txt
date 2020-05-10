@@ -1,0 +1,16 @@
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\bin\Debug\XML2DB.exe.config
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\bin\Debug\XML2DB.exe
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\bin\Debug\XML2DB.pdb
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.csprojAssemblyReference.cache
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.Properties.Resources.resources
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.csproj.GenerateResource.cache
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.exe
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.pdb
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.Cnx.resources
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.Database.resources
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.csproj.CopyComplete
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.Main.resources
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.Menu.resources
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.about.resources
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Spectre\source\repos\XML2DB\XML2DB\obj\Debug\XML2DB.db2dg.resources
