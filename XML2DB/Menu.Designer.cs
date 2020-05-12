@@ -181,6 +181,7 @@ namespace XML2DB
             this.btn_etd.TabIndex = 2;
             this.btn_etd.TabStop = false;
             this.btn_etd.Zoom = 15;
+            this.btn_etd.Click += new System.EventHandler(this.btn_etd_Click);
             // 
             // btn_about
             // 

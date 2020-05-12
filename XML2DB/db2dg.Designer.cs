@@ -29,131 +29,179 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(db2dg));
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.tb_search = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dg_SQL = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_add = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_del = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_mod = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_save = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_dbTbl = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_save_xls = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_save_db = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_Cancel = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pn_editDG = new System.Windows.Forms.Panel();
+            this.pn_save = new System.Windows.Forms.Panel();
+            this.lb_editOn = new System.Windows.Forms.Label();
             this.dbTables1 = new XML2DB.dbTables();
             ((System.ComponentModel.ISupportInitialize)(this.dg_SQL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_add)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_del)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_mod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_save)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_dbTbl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_save_xls)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_save_db)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Cancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            this.pn_save.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuMaterialTextbox1
+            // tb_search
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.HintText = "Search...";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.CornflowerBlue;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.SteelBlue;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.CornflowerBlue;
-            this.bunifuMaterialTextbox1.LineThickness = 4;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(358, 17);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(678, 40);
-            this.bunifuMaterialTextbox1.TabIndex = 2;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.toolTip1.SetToolTip(this.bunifuMaterialTextbox1, "search");
+            this.tb_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_search.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_search.HintForeColor = System.Drawing.Color.Empty;
+            this.tb_search.HintText = "Search...";
+            this.tb_search.isPassword = false;
+            this.tb_search.LineFocusedColor = System.Drawing.Color.CornflowerBlue;
+            this.tb_search.LineIdleColor = System.Drawing.Color.SteelBlue;
+            this.tb_search.LineMouseHoverColor = System.Drawing.Color.CornflowerBlue;
+            this.tb_search.LineThickness = 4;
+            this.tb_search.Location = new System.Drawing.Point(358, 17);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(678, 40);
+            this.tb_search.TabIndex = 2;
+            this.tb_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.toolTip1.SetToolTip(this.tb_search, "search");
+            this.tb_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_search_KeyDown);
+            this.tb_search.Leave += new System.EventHandler(this.tb_search_Leave);
             // 
             // dg_SQL
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dg_SQL.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dg_SQL.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dg_SQL.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dg_SQL.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dg_SQL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dg_SQL.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dg_SQL.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_SQL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dg_SQL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_SQL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dg_SQL.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_SQL.DefaultCellStyle = dataGridViewCellStyle8;
             this.dg_SQL.DoubleBuffered = true;
+            this.dg_SQL.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dg_SQL.EnableHeadersVisualStyles = false;
             this.dg_SQL.HeaderBgColor = System.Drawing.Color.SteelBlue;
-            this.dg_SQL.HeaderForeColor = System.Drawing.Color.SteelBlue;
+            this.dg_SQL.HeaderForeColor = System.Drawing.Color.White;
             this.dg_SQL.Location = new System.Drawing.Point(58, 98);
             this.dg_SQL.Name = "dg_SQL";
+            this.dg_SQL.ReadOnly = true;
             this.dg_SQL.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_SQL.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dg_SQL.RowHeadersWidth = 51;
-            this.dg_SQL.RowTemplate.Height = 24;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dg_SQL.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dg_SQL.RowTemplate.Height = 45;
+            this.dg_SQL.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dg_SQL.Size = new System.Drawing.Size(1279, 423);
             this.dg_SQL.TabIndex = 3;
+            this.dg_SQL.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_SQL_CellClick);
+            this.dg_SQL.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_SQL_CellContentClick_1);
+            this.dg_SQL.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_SQL_CellContentDoubleClick);
+            this.dg_SQL.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_SQL_CellDoubleClick);
             // 
-            // bunifuImageButton2
+            // btn_add
             // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(1362, 98);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(46, 47);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 4;
-            this.bunifuImageButton2.TabStop = false;
-            this.toolTip1.SetToolTip(this.bunifuImageButton2, "Add Column");
-            this.bunifuImageButton2.Zoom = 10;
+            this.btn_add.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
+            this.btn_add.ImageActive = null;
+            this.btn_add.Location = new System.Drawing.Point(1362, 98);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(46, 47);
+            this.btn_add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_add.TabIndex = 4;
+            this.btn_add.TabStop = false;
+            this.toolTip1.SetToolTip(this.btn_add, "Add Row");
+            this.btn_add.Zoom = 10;
+            this.btn_add.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
-            // bunifuImageButton3
+            // btn_del
             // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(1362, 174);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(46, 47);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton3.TabIndex = 5;
-            this.bunifuImageButton3.TabStop = false;
-            this.toolTip1.SetToolTip(this.bunifuImageButton3, "Remove Column");
-            this.bunifuImageButton3.Zoom = 10;
+            this.btn_del.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_del.Image = ((System.Drawing.Image)(resources.GetObject("btn_del.Image")));
+            this.btn_del.ImageActive = null;
+            this.btn_del.Location = new System.Drawing.Point(1362, 174);
+            this.btn_del.Name = "btn_del";
+            this.btn_del.Size = new System.Drawing.Size(46, 47);
+            this.btn_del.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_del.TabIndex = 5;
+            this.btn_del.TabStop = false;
+            this.toolTip1.SetToolTip(this.btn_del, "Remove Row");
+            this.btn_del.Zoom = 10;
+            this.btn_del.Click += new System.EventHandler(this.bunifuImageButton3_Click);
             // 
-            // bunifuImageButton4
+            // btn_mod
             // 
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(1362, 252);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(46, 47);
-            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton4.TabIndex = 6;
-            this.bunifuImageButton4.TabStop = false;
-            this.toolTip1.SetToolTip(this.bunifuImageButton4, "Modify Column");
-            this.bunifuImageButton4.Zoom = 10;
+            this.btn_mod.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_mod.Image = ((System.Drawing.Image)(resources.GetObject("btn_mod.Image")));
+            this.btn_mod.ImageActive = null;
+            this.btn_mod.Location = new System.Drawing.Point(1362, 252);
+            this.btn_mod.Name = "btn_mod";
+            this.btn_mod.Size = new System.Drawing.Size(46, 47);
+            this.btn_mod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_mod.TabIndex = 6;
+            this.btn_mod.TabStop = false;
+            this.toolTip1.SetToolTip(this.btn_mod, "Edit Mode");
+            this.btn_mod.Zoom = 10;
+            this.btn_mod.Click += new System.EventHandler(this.bunifuImageButton4_Click);
             // 
-            // bunifuImageButton5
+            // btn_save
             // 
-            this.bunifuImageButton5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
-            this.bunifuImageButton5.ImageActive = null;
-            this.bunifuImageButton5.Location = new System.Drawing.Point(1362, 474);
-            this.bunifuImageButton5.Name = "bunifuImageButton5";
-            this.bunifuImageButton5.Size = new System.Drawing.Size(46, 47);
-            this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton5.TabIndex = 7;
-            this.bunifuImageButton5.TabStop = false;
-            this.toolTip1.SetToolTip(this.bunifuImageButton5, "Save Table");
-            this.bunifuImageButton5.Zoom = 10;
+            this.btn_save.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_save.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.Image")));
+            this.btn_save.ImageActive = null;
+            this.btn_save.Location = new System.Drawing.Point(1362, 474);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(46, 47);
+            this.btn_save.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_save.TabIndex = 7;
+            this.btn_save.TabStop = false;
+            this.toolTip1.SetToolTip(this.btn_save, "Save Table");
+            this.btn_save.Zoom = 10;
+            this.btn_save.Click += new System.EventHandler(this.bunifuImageButton5_Click);
             // 
             // bunifuImageButton1
             // 
@@ -175,6 +223,7 @@
             // toolTip1
             // 
             this.toolTip1.BackColor = System.Drawing.SystemColors.Window;
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // btn_dbTbl
             // 
@@ -193,52 +242,167 @@
             this.btn_dbTbl.Zoom = 10;
             this.btn_dbTbl.Click += new System.EventHandler(this.bunifuImageButton6_Click);
             // 
+            // btn_save_xls
+            // 
+            this.btn_save_xls.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_save_xls.Image = ((System.Drawing.Image)(resources.GetObject("btn_save_xls.Image")));
+            this.btn_save_xls.ImageActive = null;
+            this.btn_save_xls.Location = new System.Drawing.Point(24, 9);
+            this.btn_save_xls.Name = "btn_save_xls";
+            this.btn_save_xls.Size = new System.Drawing.Size(35, 38);
+            this.btn_save_xls.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_save_xls.TabIndex = 13;
+            this.btn_save_xls.TabStop = false;
+            this.toolTip1.SetToolTip(this.btn_save_xls, "Save on XLS file");
+            this.btn_save_xls.Zoom = 10;
+            this.btn_save_xls.Click += new System.EventHandler(this.bunifuImageButton8_Click);
+            // 
+            // btn_save_db
+            // 
+            this.btn_save_db.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_save_db.Image = ((System.Drawing.Image)(resources.GetObject("btn_save_db.Image")));
+            this.btn_save_db.ImageActive = null;
+            this.btn_save_db.Location = new System.Drawing.Point(24, 97);
+            this.btn_save_db.Name = "btn_save_db";
+            this.btn_save_db.Size = new System.Drawing.Size(35, 38);
+            this.btn_save_db.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_save_db.TabIndex = 14;
+            this.btn_save_db.TabStop = false;
+            this.toolTip1.SetToolTip(this.btn_save_db, "Save on Database");
+            this.btn_save_db.Zoom = 10;
+            this.btn_save_db.Click += new System.EventHandler(this.btn_save_db_Click);
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_Cancel.Image")));
+            this.btn_Cancel.ImageActive = null;
+            this.btn_Cancel.Location = new System.Drawing.Point(1011, 24);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(25, 21);
+            this.btn_Cancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Cancel.TabIndex = 14;
+            this.btn_Cancel.TabStop = false;
+            this.toolTip1.SetToolTip(this.btn_Cancel, "Clear Text");
+            this.btn_Cancel.Visible = false;
+            this.btn_Cancel.Zoom = 15;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(24, 53);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(35, 38);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 15;
+            this.bunifuImageButton2.TabStop = false;
+            this.toolTip1.SetToolTip(this.bunifuImageButton2, "Save on XML file");
+            this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click_1);
+            // 
+            // pn_editDG
+            // 
+            this.pn_editDG.Location = new System.Drawing.Point(1343, 65);
+            this.pn_editDG.Name = "pn_editDG";
+            this.pn_editDG.Size = new System.Drawing.Size(82, 474);
+            this.pn_editDG.TabIndex = 12;
+            this.pn_editDG.Visible = false;
+            this.pn_editDG.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_editDG_Paint);
+            // 
+            // pn_save
+            // 
+            this.pn_save.Controls.Add(this.bunifuImageButton2);
+            this.pn_save.Controls.Add(this.btn_save_db);
+            this.pn_save.Controls.Add(this.btn_save_xls);
+            this.pn_save.Location = new System.Drawing.Point(1343, 328);
+            this.pn_save.Name = "pn_save";
+            this.pn_save.Size = new System.Drawing.Size(82, 140);
+            this.pn_save.TabIndex = 0;
+            this.pn_save.Visible = false;
+            this.pn_save.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_save_Paint);
+            // 
+            // lb_editOn
+            // 
+            this.lb_editOn.AutoSize = true;
+            this.lb_editOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_editOn.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lb_editOn.Location = new System.Drawing.Point(1191, 534);
+            this.lb_editOn.Name = "lb_editOn";
+            this.lb_editOn.Size = new System.Drawing.Size(132, 20);
+            this.lb_editOn.TabIndex = 15;
+            this.lb_editOn.Text = "Edit Mode is ON";
+            this.lb_editOn.Visible = false;
+            this.lb_editOn.ClientSizeChanged += new System.EventHandler(this.label1_ClientSizeChanged);
+            this.lb_editOn.Click += new System.EventHandler(this.lb_editOn_Click);
+            // 
             // dbTables1
             // 
+            this.dbTables1.AutoSize = true;
             this.dbTables1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dbTables1.Location = new System.Drawing.Point(69, 65);
             this.dbTables1.Name = "dbTables1";
-            this.dbTables1.Size = new System.Drawing.Size(442, 472);
+            this.dbTables1.Size = new System.Drawing.Size(444, 474);
             this.dbTables1.TabIndex = 11;
+            this.dbTables1.Load += new System.EventHandler(this.dbTables1_Load_1);
             // 
             // db2dg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.lb_editOn);
+            this.Controls.Add(this.btn_Cancel);
+            this.Controls.Add(this.pn_save);
             this.Controls.Add(this.dbTables1);
             this.Controls.Add(this.btn_dbTbl);
             this.Controls.Add(this.bunifuImageButton1);
-            this.Controls.Add(this.bunifuImageButton5);
-            this.Controls.Add(this.bunifuImageButton4);
-            this.Controls.Add(this.bunifuImageButton3);
-            this.Controls.Add(this.bunifuImageButton2);
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.btn_mod);
+            this.Controls.Add(this.btn_del);
+            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.dg_SQL);
-            this.Controls.Add(this.bunifuMaterialTextbox1);
+            this.Controls.Add(this.tb_search);
+            this.Controls.Add(this.pn_editDG);
             this.Name = "db2dg";
             this.Size = new System.Drawing.Size(1425, 573);
             this.Load += new System.EventHandler(this.db2dg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_SQL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_add)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_del)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_mod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_save)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_dbTbl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_save_xls)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_save_db)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Cancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            this.pn_save.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox tb_search;
         public Bunifu.Framework.UI.BunifuCustomDataGrid dg_SQL;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton5;
+        private Bunifu.Framework.UI.BunifuImageButton btn_add;
+        private Bunifu.Framework.UI.BunifuImageButton btn_del;
+        private Bunifu.Framework.UI.BunifuImageButton btn_mod;
+        private Bunifu.Framework.UI.BunifuImageButton btn_save;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.ToolTip toolTip1;
         private Bunifu.Framework.UI.BunifuImageButton btn_dbTbl;
         private dbTables dbTables1;
+        public System.Windows.Forms.Panel pn_editDG;
+        private System.Windows.Forms.Panel pn_save;
+        private Bunifu.Framework.UI.BunifuImageButton btn_save_xls;
+        private Bunifu.Framework.UI.BunifuImageButton btn_save_db;
+        public Bunifu.Framework.UI.BunifuImageButton btn_Cancel;
+        private System.Windows.Forms.Label lb_editOn;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
     }
 }

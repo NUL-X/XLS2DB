@@ -35,21 +35,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_cnx = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.pn_trg = new System.Windows.Forms.Panel();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.bunifuSeparator2);
             this.panel1.Controls.Add(this.btn_nTb);
             this.panel1.Controls.Add(this.cb_tb);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btn_cnx);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.bunifuCustomLabel1);
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Location = new System.Drawing.Point(2, 13);
             this.panel1.Name = "panel1";
@@ -123,7 +123,7 @@
             this.btn_cnx.IdleFillColor = System.Drawing.Color.White;
             this.btn_cnx.IdleForecolor = System.Drawing.Color.SteelBlue;
             this.btn_cnx.IdleLineColor = System.Drawing.Color.SteelBlue;
-            this.btn_cnx.Location = new System.Drawing.Point(245, 94);
+            this.btn_cnx.Location = new System.Drawing.Point(262, 43);
             this.btn_cnx.Margin = new System.Windows.Forms.Padding(5);
             this.btn_cnx.Name = "btn_cnx";
             this.btn_cnx.Size = new System.Drawing.Size(144, 48);
@@ -137,35 +137,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 105);
+            this.label1.Location = new System.Drawing.Point(26, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 27);
             this.label1.TabIndex = 10;
             this.label1.Text = "1. Connect to DB:";
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(26, 22);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(94, 25);
-            this.bunifuCustomLabel1.TabIndex = 8;
-            this.bunifuCustomLabel1.Text = "DB tables";
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(3, 51);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(432, 25);
-            this.bunifuSeparator1.TabIndex = 7;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
             // 
             // pn_trg
             // 
@@ -174,6 +150,32 @@
             this.pn_trg.Size = new System.Drawing.Size(34, 14);
             this.pn_trg.TabIndex = 0;
             this.pn_trg.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_trg_Paint_1);
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(4, 120);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(432, 25);
+            this.bunifuSeparator1.TabIndex = 7;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(4, 306);
+            this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Size = new System.Drawing.Size(432, 25);
+            this.bunifuSeparator2.TabIndex = 14;
+            this.bunifuSeparator2.Transparency = 255;
+            this.bunifuSeparator2.Vertical = false;
             // 
             // dbTables
             // 
@@ -199,8 +201,8 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_cnx;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Panel pn_trg;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
     }
 }

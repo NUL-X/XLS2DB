@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table1>
+    <employee_id>10</employee_id>
+    <last_name>Anderson</last_name>
+    <first_name>Sarah</first_name>
+  </Table1>
+  <Table1>
+    <employee_id>1</employee_id>
+    <last_name>Leo</last_name>
+    <first_name>James</first_name>
+  </Table1>
+  <Table1>
+    <employee_id>2</employee_id>
+    <last_name>Ann</last_name>
+    <first_name>Lili</first_name>
+  </Table1>
+</NewDataSet>

@@ -46,5 +46,10 @@ namespace XML2DB
             ((Main)ParentForm).show_db2dg();
 
         }
+
+        private void btn_etd_Click(object sender, EventArgs e)
+        {
+            ((Main)ParentForm).show_xls2dg();
+        }
     }
 }

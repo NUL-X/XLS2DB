@@ -238,12 +238,21 @@ namespace XML2DB
         {
             this.menu1.Show();
             this.db2dg2.Hide();
+            this.xls2dg1.Hide();
             this.db2dg2.Visible = false;
             
             this.menu1.BringToFront();
 
         }
 
+        public void show_xls2dg()
+        {
+ 
+            this.xls2dg1.Visible = true;
+
+
+            this.xls2dg1.BringToFront();
+        }
 
 
         private void menu1_Load(object sender, EventArgs e)

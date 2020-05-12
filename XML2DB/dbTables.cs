@@ -20,14 +20,14 @@ namespace XML2DB
         Pen pen_draw = new Pen(Color.Black);
         SolidBrush sb = new SolidBrush(Color.SteelBlue);
         Connection cn;
-
+        Cnx cnx;
         /*
          This variable for comboBox filling the comboBox
          */
         public static string[] tb_names;
         public static int tb_length=-1;
         public static bool added = false;
-
+        public static string cb_tbSelect;
         /*
          
          */
@@ -62,13 +62,13 @@ namespace XML2DB
             
             try { 
 
-            Cnx cnx = new Cnx(this);
+            cnx = new Cnx();
 
             if (Application.OpenForms[cnx.Name] == null)
             {
                 cnx.Show();
-                    //this.Hide();
-                    this.Visible = false;
+        
+                 this.Visible = false;
                 
             }
             else
@@ -142,12 +142,11 @@ namespace XML2DB
 
         private void btn_nTb_Click(object sender, EventArgs e)
         {
-            string cb_tbSelect = cb_tb.SelectedItem.ToString();
+            cb_tbSelect = cb_tb.SelectedItem.ToString();
             dbx.TableToXML(cb_tbSelect);
-            DataSet dataSet = new DataSet();
-            dataSet.ReadXml(@"" + cb_tbSelect + ".xml");
-            //().DG_Write(cb_tbSelect);
-            //d2g.Show();
+            ((db2dg)Parent).DG_Write(cb_tbSelect);
+            ((db2dg)Parent).pn_editDG.Visible = true;
+            this.Hide();
         }
 
     }

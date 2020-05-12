@@ -2,22 +2,27 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Windows.Forms;
+using XMLUtils;
 
 namespace XML2DB
 {
     class Connection
     {
         static string ConnectionString;
-        static SqlConnection con;
+        public static SqlConnection con;
+        public static string DBname;
+
 
         public object ConfigurationManager { get; private set; }
 
-        public Connection(string cs)
+        public Connection(string cs,string dbName)
         {
             ConnectionString = cs;
+            DBname = dbName;
         }
         public Connection()
         {
@@ -46,20 +51,6 @@ namespace XML2DB
         }
 
 
-        public void ExecuteQueries(string Query_)
-        {
-            SqlCommand cmd = new SqlCommand(Query_, con);
-            cmd.ExecuteNonQuery();
-        }
-
-
-        public SqlDataReader DataReader(string Query_)
-        {
-            SqlCommand cmd = new SqlCommand(Query_, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            return dr;
-        }
-
 
         public object ShowDataInGridView(string Query_)
         {
@@ -82,31 +73,29 @@ namespace XML2DB
 
         public void TableToXml(string tableName)
         {
-            try
-            {
-                string ConString = ConnectionString;
-                string CmdString = "SELECT * FROM " + tableName + " FOR XML RAW('" + tableName + "'), ROOT('" + tableName + "'), ELEMENTS";
-                SqlConnection con;
-                SqlCommand cmd;
-                SqlDataAdapter sda;
-                DataTable dt;
-                using (con = new SqlConnection(ConString))
-                {
-                    cmd = new SqlCommand(CmdString, con);
-                    con.Open();
-                    dt = new DataTable(tableName);
-                    sda = new SqlDataAdapter(cmd);
-                    sda.Fill(dt);
-                    dt.WriteXml(tableName+".xml");
-                    con.Close();
-                    MessageBox.Show("XMLWriting is successful!!");
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM " + tableName, new SqlConnection(ConnectionString));
+            DataTable dt = new DataTable();
+            new SqlDataAdapter(cmd).Fill(dt);
+
+            dt.TableName = tableName;
+            dt.WriteXml(tableName+".xml");
+            //dt.WriteXmlSchema("Schema File Address");
+            MessageBox.Show("XMLWriting is successful!!");
 
         }
+
+        public void DTtoSQL(DataTable dt)
+        {
+
+            string cnStr = ConnectionString;
+            XmlUtils.export2DB(dt,cnStr,DBname);
+        }
+
+        public void ImportXML(string filename)
+        {
+        }
+
     }
 }

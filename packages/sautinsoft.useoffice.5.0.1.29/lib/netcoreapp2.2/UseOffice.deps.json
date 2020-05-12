@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "UseOffice/5.0.1.29": {
+        "runtime": {
+          "UseOffice.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UseOffice/5.0.1.29": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

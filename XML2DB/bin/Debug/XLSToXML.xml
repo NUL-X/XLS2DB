@@ -1,0 +1,141 @@
+<?xml version="1.0"?><?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:html="http://www.w3.org/TR/REC-html40">
+  <ss:Styles>
+    <ss:Style ss:ID="Default" ss:Name="Normal">
+      <ss:Font ss:FontName="Calibri" ss:Color="#000000" ss:Size="11" />
+      <ss:Protection />
+      <ss:Alignment ss:Vertical="Bottom" />
+      <ss:NumberFormat ss:Format="General" />
+      <ss:Interior ss:Color="#000000" ss:PatternColor="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s1">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s2">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s3">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s4">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s5">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s6">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s7">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s8">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s9">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s10">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s11">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s12">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s13">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s14">
+      <ss:Font ss:FontName="Tahoma" ss:Color="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s15">
+      <ss:Protection />
+      <ss:Alignment ss:Vertical="Bottom" />
+      <ss:NumberFormat ss:Format="General" />
+      <ss:Interior ss:Color="#000000" ss:PatternColor="#000000" />
+    </ss:Style>
+    <ss:Style ss:ID="s16" ss:Name="Percent">
+      <ss:NumberFormat ss:Format="0%" />
+    </ss:Style>
+    <ss:Style ss:ID="s17" ss:Name="Currency">
+      <ss:NumberFormat ss:Format="_(&quot;$&quot;* #,##0.00_);_(&quot;$&quot;* \( #,##0.00\ );_(&quot;$&quot;* &quot;-&quot;??_);_( @_ )" />
+    </ss:Style>
+    <ss:Style ss:ID="s18" ss:Name="Currency [0]">
+      <ss:NumberFormat ss:Format="_(&quot;$&quot;* #,##0_);_(&quot;$&quot;* \( #,##0\ );_(&quot;$&quot;* &quot;-&quot;_);_( @_ )" />
+    </ss:Style>
+    <ss:Style ss:ID="s19" ss:Name="Comma">
+      <ss:NumberFormat ss:Format="_(* #,##0.00_);_(* \( #,##0.00\ );_(* &quot;-&quot;??_);_( @_ )" />
+    </ss:Style>
+    <ss:Style ss:ID="s20" ss:Name="Comma [0]">
+      <ss:NumberFormat ss:Format="_(* #,##0_);_(* \( #,##0\ );_(* &quot;-&quot;_);_( @_ )" />
+    </ss:Style>
+  </ss:Styles>
+  <x:ExcelWorkbook />
+  <ss:Worksheet ss:Name="Customers">
+    <ss:Table ss:DefaultRowHeight="15">
+      <Row ss:Index="1" ss:Height="15" ss:AutoFitHeight="0">
+        <Cell ss:Index="1">
+          <Data ss:Type="String">employee_id</Data>
+        </Cell>
+        <Cell ss:Index="2">
+          <Data ss:Type="String">last_name</Data>
+        </Cell>
+        <Cell ss:Index="3">
+          <Data ss:Type="String">first_name</Data>
+        </Cell>
+      </Row>
+      <Row ss:Index="2" ss:Height="15" ss:AutoFitHeight="0">
+        <Cell ss:Index="1">
+          <Data ss:Type="String">10</Data>
+        </Cell>
+        <Cell ss:Index="2">
+          <Data ss:Type="String">Anderson</Data>
+        </Cell>
+        <Cell ss:Index="3">
+          <Data ss:Type="String">Sarah</Data>
+        </Cell>
+      </Row>
+      <Row ss:Index="3" ss:Height="15" ss:AutoFitHeight="0">
+        <Cell ss:Index="1">
+          <Data ss:Type="String">1</Data>
+        </Cell>
+        <Cell ss:Index="2">
+          <Data ss:Type="String">Leo</Data>
+        </Cell>
+        <Cell ss:Index="3">
+          <Data ss:Type="String">James</Data>
+        </Cell>
+      </Row>
+      <Row ss:Index="4" ss:Height="15" ss:AutoFitHeight="0">
+        <Cell ss:Index="1">
+          <Data ss:Type="String">2</Data>
+        </Cell>
+        <Cell ss:Index="2">
+          <Data ss:Type="String">Ann</Data>
+        </Cell>
+        <Cell ss:Index="3">
+          <Data ss:Type="String">Lili</Data>
+        </Cell>
+      </Row>
+    </ss:Table>
+    <x:WorksheetOptions>
+      <x:Selected />
+      <x:FitToPage />
+      <x:PageBreakZoom>60</x:PageBreakZoom>
+      <x:PageSetup>
+        <x:Footer x:Margin="0.75" />
+        <x:Layout />
+        <x:PageMargins x:Bottom="0.5" x:Top="0.75" />
+      </x:PageSetup>
+      <x:Panes />
+      <x:FrozenNoSplit />
+      <x:Print>
+        <x:NumberofCopies>-1</x:NumberofCopies>
+        <x:HorizontalResolution>0</x:HorizontalResolution>
+      </x:Print>
+    </x:WorksheetOptions>
+    <x:PageBreaks />
+  </ss:Worksheet>
+</Workbook>

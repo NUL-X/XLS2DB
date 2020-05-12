@@ -32,7 +32,7 @@ namespace XML2DB
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.menu1 = new XML2DB.Menu();
@@ -46,6 +46,7 @@ namespace XML2DB
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.xls2dg1 = new XML2DB.xls2dg();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_min)).BeginInit();
@@ -60,6 +61,7 @@ namespace XML2DB
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.menu1);
             this.panel1.Controls.Add(this.db2dg2);
+            this.panel1.Controls.Add(this.xls2dg1);
             this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Location = new System.Drawing.Point(2, 194);
             this.panel1.Name = "panel1";
@@ -78,6 +80,7 @@ namespace XML2DB
             // 
             // db2dg2
             // 
+            this.db2dg2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bunifuTransition1.SetDecoration(this.db2dg2, BunifuAnimatorNS.DecorationType.None);
             this.db2dg2.Location = new System.Drawing.Point(-2, 0);
             this.db2dg2.Name = "db2dg2";
@@ -183,22 +186,30 @@ namespace XML2DB
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.bunifuTransition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation1;
+            // 
+            // xls2dg1
+            // 
+            this.bunifuTransition1.SetDecoration(this.xls2dg1, BunifuAnimatorNS.DecorationType.None);
+            this.xls2dg1.Location = new System.Drawing.Point(3, -2);
+            this.xls2dg1.Name = "xls2dg1";
+            this.xls2dg1.Size = new System.Drawing.Size(1423, 573);
+            this.xls2dg1.TabIndex = 5;
             // 
             // Main
             // 
@@ -240,5 +251,6 @@ namespace XML2DB
        
         private db2dg db2dg2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private xls2dg xls2dg1;
     }
 }

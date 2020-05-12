@@ -20,8 +20,8 @@ namespace XML2DB
          public  string connetionString="";
         Connection cn;
         dbTables dbt;
-
-        public Cnx(dbTables dbt)
+        XlsDB xdb;
+        public Cnx()
         {
 
             InitializeComponent();
@@ -51,16 +51,12 @@ namespace XML2DB
 
                     if (auth.Equals("Windows Authentication")) {
 
-
                     this.connetionString = @"Data Source=. ;Initial Catalog=" + dbname + ";Integrated Security = true";
-                
-
 
                     } else if (auth.Equals("SQLServer Authentication")) {
 
 
                     this.connetionString = @"Data Source=.;Initial Catalog=" + dbname + ";User ID=" + username + ";Password=" + password + "";
-
 
                     }
 
@@ -90,7 +86,9 @@ namespace XML2DB
                    }
 
 
-            cn = new Connection(this.connetionString);
+                //Connection to SQLServer
+
+            cn = new Connection(this.connetionString,dbname);
             cn.OpenConection();
             Main main = new Main();
 
@@ -98,11 +96,11 @@ namespace XML2DB
             string[] tb = cn.GetAllTables();
 
             dbt = new dbTables(tb,tb.Length);
-            
+            xdb = new XlsDB(tb,tb.Length);
           
-            dbt.Visible = true;
+            //dbt.Visible = true;
             cn.CloseConnection();
-            this.Hide();
+            this.Dispose();
         
             
                    }

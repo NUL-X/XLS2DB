@@ -1,0 +1,1544 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>UseOffice</name>
+  </assembly>
+  <members>
+    <!-- Badly formed XML comment ignored for member "M:sautinsoftlocal.pdf.RandomAccessFileOrArray.ReadShortLE" -->
+    <!-- Badly formed XML comment ignored for member "M:sautinsoftlocal.pdf.RandomAccessFileOrArray.ReadUnsignedShortLE" -->
+    <!-- Badly formed XML comment ignored for member "M:sautinsoftlocal.pdf.RandomAccessFileOrArray.ReadCharLE" -->
+    <!-- Badly formed XML comment ignored for member "M:sautinsoftlocal.pdf.RandomAccessFileOrArray.ReadIntLE" -->
+    <!-- Badly formed XML comment ignored for member "M:sautinsoftlocal.pdf.RandomAccessFileOrArray.ReadUnsignedInt" -->
+    <member name="T:SautinSoft.UseOffice">
+      <summary>
+            The main class to convert between DOC, DOCX, XLS, XLSX, PPT, PPTX, ACCDB, CSV, RTF, Text, HTML and PDF documents with tables, images, fonts, colors, Unicode text etc.
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/useoffice.class.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="T:SautinSoft.UseOffice.eOfficeVersion">
+      <summary>
+            Allows to get a current MS Office version.
+            </summary>
+      <remarks>
+            The property is filled after the invoking of InitWord() method.
+            </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert PDF to RTF - only Office 2013 and higher\sample.cs" title="How to convert a PDF file to a RTF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert PDF to RTF - only Office 2013 and higher\sample.vb" title="How to convert a PDF file to a RTF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eOfficeVersion.Unknown">
+      <summary>
+            An unknown version. Just in case, the property is filled after the invoking of InitWord() method.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eOfficeVersion.Office2000">
+      <summary>
+            MS Office 2000. Integer value is 9.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eOfficeVersion.OfficeXP">
+      <summary>
+            MS Office XP. Integer value is 10.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eOfficeVersion.Office2003">
+      <summary>
+            MS Office 2003. Integer value is 11.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eOfficeVersion.Office2007">
+      <summary>
+            MS Office 2007. Integer value is 12.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eOfficeVersion.Office2010">
+      <summary>
+            MS Office 2010. Integer value is 14.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eOfficeVersion.Office2013">
+      <summary>
+            MS Office 2013. Integer value is 15.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eOfficeVersion.Office2016Or2019">
+      <summary>
+            MS Office 2016/2019. Integer value is 16.
+            </summary>
+    </member>
+    <member name="T:SautinSoft.UseOffice.eDirection">
+      <summary>
+            Available converting directions
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/useoffice.class.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert PPTX file to JPG file\sample.cs" title="How to convert a PPTX file to a JPG file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert PPTX file to JPG file\sample.vb" title="How to convert a PPTX file to a JPG file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PDF_to_DOCX">
+      <summary>
+            Convert *.pdf to *.docx. Works only in MS Office 2013 or higher.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PDF_to_DOC">
+      <summary>
+            Convert *.pdf to *.doc. Works only in MS Office 2013 or higher.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PDF_to_RTF">
+      <summary>
+            Convert *.pdf to *.rtf. Works only in MS Office 2013 or higher.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PDF_to_TEXT">
+      <summary>
+            Convert *.pdf to *.txt. Works only in MS Office 2013 or higher.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOC_to_DOCX">
+      <summary>
+            Convert *.doc to *.docx, Word to Word 2007/2010
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOC_to_HTML">
+      <summary>
+            Convert *.doc to *.html, MS Word (DOC) to HTML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOC_to_WEBARCHIVE">
+      <summary>
+            Convert *.doc to *.mht, Word to Web-archive
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOC_to_XML">
+      <summary>
+            Convert *.doc to *.xml, MS Word (DOC) to XML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOC_to_RTF">
+      <summary>
+            Convert *.doc to *.rtf, MS Word (DOC) to RTF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOC_to_PDF">
+      <summary>
+            Convert *.doc to *.pdf, Word to Adobe PDF            
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOC_to_TEXT">
+      <summary>
+            Convert *.doc to *.txt, Word to ANSI Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOC_to_UNICODETEXT">
+      <summary>
+            Convert *.doc to *.txt, Word to Unicode Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOCX_to_HTML">
+      <summary>
+            Convert *.docx to *.HTML, DOCX to HTML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOCX_to_WEBARCHIVE">
+      <summary>
+            Convert *.docx to *.mht, DOCX to Web-archive
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOCX_to_XML">
+      <summary>
+            Convert *.docx to *.xml, DOCX to XML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOCX_to_RTF">
+      <summary>
+            Convert *.docx to *.rtf, DOCX to RTF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOCX_to_PDF">
+      <summary>
+            Convert *.docx to *.pdf, DOCX to Adobe PDF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOCX_to_TEXT">
+      <summary>
+            Convert *.docx to *.txt, DOCX to ANSI Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.DOCX_to_UNICODETEXT">
+      <summary>
+            Convert *.docx to *.txt, DOCX to Unicode Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.HTML_to_DOC">
+      <summary>
+            Convert *.htm* to *.doc, HTML to MS Word (DOC)
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.HTML_to_DOCX">
+      <summary>
+            Convert *.htm* to *.docx, HTML to MS Word (DOCX)
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.HTML_to_RTF">
+      <summary>
+            Convert *.htm* to *.rtf, HTML to MS Word (RTF)
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.HTML_to_PDF">
+      <summary>
+            Convert *.htm* to *.pdf, HTML to Adobe PDF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.HTML_to_TEXT">
+      <summary>
+            Convert *.htm* to *.txt, HTML to ANSI Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.HTML_to_UNICODETEXT">
+      <summary>
+            Convert *.htm* to *.txt, HTML to Unicode Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.RTF_to_TEXT">
+      <summary>
+            Convert *.rtf to *.txt, RTF to ANSI Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.RTF_to_UNICODETEXT">
+      <summary>
+            Convert *.rtf to *.txt, RTF to Unicode Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.RTF_to_HTML">
+      <summary>
+            Convert *.rtf to *.html, RTF to HTML with CSS
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.RTF_to_WEBARCHIVE">
+      <summary>
+            Convert RTF to *.mht (Web-archive)
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.RTF_to_XML">
+      <summary>
+            Convert *.rtf to *.xml, RTF to XML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.RTF_to_DOC">
+      <summary>
+            Convert *.rtf to *.doc, RTF to MS Word (DOC)
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.RTF_to_DOCX">
+      <summary>
+            Convert *.rtf to *.docx, RTF to MS Word (DOCX)
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.RTF_to_PDF">
+      <summary>
+            Convert *.rtf to *.pdf, RTF to Adobe PDF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.TEXT_to_PDF">
+      <summary>
+            Convert *.txt to *.pdf, Text to Adobe PDF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.TEXT_to_RTF">
+      <summary>
+            Convert *.txt to *.rtf, Text to RTF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.TEXT_to_DOC">
+      <summary>
+            Convert *.txt to *.doc, Text to DOC (MS Word 97-2003)
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.TEXT_to_DOCX">
+      <summary>
+            Convert *.txt to *.docx, Text to DOCX
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLSX_to_XLS">
+      <summary>
+            Convert *.xlsx to *.xls
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLS_to_XLSX">
+      <summary>
+            Convert *.xls to *.xlsx
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLS_to_RTF">
+      <summary>
+            Convert *.xls to *.rtf, Excel to RTF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLS_to_PDF">
+      <summary>
+            Convert *.xls to *.pdf, Excel to PDF
+            </summary>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert XLS file to PDF file\sample.cs" title="How to convert a XLS file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert XLS file to PDF file\sample.vb" title="How to convert a XLS file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLSX_to_RTF">
+      <summary>
+            Convert *.xlsx to *.rtf, Excel to RTF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLSX_to_PDF">
+      <summary>
+            Convert *.xlsx to *.pdf, Excel to PDF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLS_to_HTML">
+      <summary>
+            Convert *.xls to *.html, Excel to HTML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLSX_to_HTML">
+      <summary>
+            Convert *.xlsx to *.html, Excel to HTML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLS_to_WEBARCHIVE">
+      <summary>
+            Convert *.xls to *.mht, Excel to Web-archive
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLSX_to_WEBARCHIVE">
+      <summary>
+            Convert *.xlsx to *.mht, Excel to Web-archive
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLS_to_XML">
+      <summary>
+            Convert *.xls to *.xml, Excel to XML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLSX_to_XML">
+      <summary>
+            Convert *.xlsx to *.xml, Excel to XML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLS_to_TEXT">
+      <summary>
+            Convert *.xls to *.txt, Excel to ANSI Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLSX_to_TEXT">
+      <summary>
+            Convert *.xlsx to *.txt, Excel to ANSI Text
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLS_to_CSV">
+      <summary>
+            Convert *.xls to *.csv
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.XLSX_to_CSV">
+      <summary>
+            Convert *.xlsx to *.csv
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPT_to_HTML">
+      <summary>
+            Convert *.ppt to *.html, PowerPoint to HTML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPT_to_WEBARCHIVE">
+      <summary>
+            Convert *.ppt to *.mht, PowerPoint to Web-archive
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPT_to_XML">
+      <summary>
+            Convert *.ppt to *.xml, PowerPoint to XML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPT_to_RTF">
+      <summary>
+            Convert *.ppt to *.rtf, PowerPoint to RTF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPT_to_PDF">
+      <summary>
+            Convert *.ppt to *.pdf, PowerPoint to Adobe PDF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPT_to_JPG">
+      <summary>
+            Convert *.ppt to *.jpg, PowerPoint to JPEG
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPT_to_BMP">
+      <summary>
+            Convert *.ppt to *.bmp, PowerPoint to BMP
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPT_to_GIF">
+      <summary>
+            Convert *.ppt to *.gif, PowerPoint to GIF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPT_to_PPTX">
+      <summary>
+            Convert *.ppt to *.pptx, PowerPoint (97-2003) to PowerPoint Presentation.
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPTX_to_HTML">
+      <summary>
+            Convert *.pptx to *.html, PowerPoint to HTML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPTX_to_WEBARCHIVE">
+      <summary>
+            Convert *.pptx to *.mht, PowerPoint to Web-archive
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPTX_to_XML">
+      <summary>
+            Convert *.pptx to *.xml, PowerPoint to XML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPTX_to_RTF">
+      <summary>
+            Convert *.pptx to *.rtf, PowerPoint to RTF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPTX_to_PDF">
+      <summary>
+            Convert *.pptx to *.pdf, PowerPoint to Adobe PDF
+            </summary>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert PPTX file to PDF file\sample.cs" title="How to convert a PPTX file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert PPTX file to PDF file\sample.vb" title="How to convert a PPTX file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPTX_to_JPG">
+      <summary>
+            Convert *.pptx to *.jpg, PowerPoint to JPEG
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPTX_to_BMP">
+      <summary>
+            Convert *.pptx to *.bmp, PowerPoint to BMP
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPTX_to_GIF">
+      <summary>
+            Convert *.pptx to *.gif, PowerPoint to GIF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.PPTX_to_PPT">
+      <summary>
+            Convert *.pptx to *.ppt, PowerPoint Presentation to the old format PowerPoint (97-2003).
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.ACCESS_to_PDF">
+      <summary>
+            Convert *.accdb to *.pdf, MS Access to PDF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.ACCESS_to_RTF">
+      <summary>
+            Convert *.accdb to *.pdf, MS Access to RTF
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.ACCESS_to_HTML">
+      <summary>
+            Convert *.accdb to *.pdf, MS Access to HTML
+            </summary>
+    </member>
+    <member name="F:SautinSoft.UseOffice.eDirection.ACCESS_to_TEXT">
+      <summary>
+            Convert *.accdb to *.pdf, MS Access to Text
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.#ctor">
+      <summary>
+            Creates an object of the <see cref="T:SautinSoft.UseOffice" /> class
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/useoffice.class.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert PDF to DOC - only Office 2013 and higher\sample.cs" title="How to convert a PDF file to a DOC file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert PDF to DOC - only Office 2013 and higher\sample.vb" title="How to convert a PDF file to a DOC file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.Finalize">
+      <summary>
+            Releases MS Office from memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/closeoffice.method.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.Dispose">
+      <summary>
+            Releases MS Office from memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/closeoffice.method.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.IsPasswordProtected(System.String)">
+      <summary>
+            Detects if a given Ms Office document is protected by a password or not.
+            Supported formats: Word, Excel and PowerPoint (both legacy and OpenXml).
+            </summary>
+      <param name="fileName">Path to a MS Office document.</param>
+      <returns>True if document is protected by a password, false otherwise.</returns>
+    </member>
+    <member name="M:SautinSoft.UseOffice.IsPasswordProtected(System.Byte[])">
+      <summary>
+            Detects if a given MS Office document is protected by a password or not.
+            Supported formats: Word, Excel and PowerPoint (both legacy and OpenXml).
+            </summary>
+      <param name="fileBytes">MS Office document as a byte array.</param>
+      <returns>True if document is protected by a password, false otherwise.</returns>
+    </member>
+    <member name="M:SautinSoft.UseOffice.IsPasswordProtected(System.IO.Stream)">
+      <summary>
+            Detects if a given Ms Office document is protected by a password or not.
+            Supported formats: Word, Excel and PowerPoint (both legacy and OpenXml).
+            </summary>
+      <param name="stream">MS Office document stream.</param>
+      <returns>True if document is protected by a password, false otherwise.</returns>
+    </member>
+    <member name="T:SautinSoft.UseOffice.CExcelOptions">
+      <summary>
+            Allows to specify some Excel options (sheet numbers, how to fit a sheet on page) for converting.
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/exceltopdf.csheet.custom.method.png" />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert custom Excel sheets to PDF\sample.cs" title="How to convert custom Excel sheets to a PDF document in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert custom Excel sheets to PDF\sample.vb" title="How to convert custom Excel sheets to a PDF document in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CExcelOptions.#ctor">
+      <summary>
+            Creates object of class CSheet. By default all sheets from workbook will be converted
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/exceltopdf.csheet.custom.method.png" />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert XLS file to HTML file\sample.cs" title="How to convert a XLS file to a HTML file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert XLS file to HTML file\sample.vb" title="How to convert a XLS file to a HTML file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CExcelOptions.FitSheetToPage">
+      <summary>
+            Sets or gets to fit each sheet to page size.Thus, an each Excel sheet will take an one page.
+            </summary>
+      <remarks>
+            Default value: true.<br /></remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CExcelOptions.AllSheets">
+      <summary>
+            Convert all sheets from workbook
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/exceltopdf.csheet.all.png" />
+      </remarks>
+      <example>
+        <code lang="cs">
+            SautinSoft.UseOffice u = new UseOffice();
+            if (u.InitExcel() == 0)
+            {
+                u.Sheets.All();
+                u.ConvertFile(@"D:\Workbook.xlsx", @"d:\Result.pdf", UseOffice.eDirection.XLSX_to_PDF);
+                //Make other conversions ....
+                u.CloseExcel();
+            }
+            </code>
+        <code lang="vbnet">
+            Dim u As SautinSoft.UseOffice = New UseOffice()
+            If u.InitExcel() = 0 Then
+                u.Sheets.All()
+                u.ConvertFile("D:\Workbook.xlsx", "d:\Result.pdf", UseOffice.eDirection.XLSX_to_PDF)
+                'Make other conversions ....
+                u.CloseExcel()
+            End If
+            </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CExcelOptions.SheetNumber(System.Int32)">
+      <summary>
+            Allows to set custom sheet for converting by its number
+            </summary>
+      <remarks>
+            Use this method when you want to convert only a single worksheet which has references to other sheets.<br /><br /></remarks>
+      <param name="sheetNum">Sheet number</param>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CExcelOptions.SheetNumbers(System.Int32[])">
+      <summary>
+            Allows to specify custom sheets to convert by their numbers
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/exceltopdf.csheet.custom.method.png" />
+      </remarks>
+      <param name="sheetNums">Array with sheet numbers</param>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert custom Excel sheets to PDF\sample.cs" title="How to convert custom Excel sheets to a PDF document in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert custom Excel sheets to PDF\sample.vb" title="How to convert custom Excel sheets to a PDF document in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CExcelOptions.SheetNames(System.String[])">
+      <summary>
+            Allows to specify custom sheets to convert by their names
+            </summary>
+      <param name="sheetNames">Array with sheet numbers</param>
+      <example>
+        <code lang="cs">
+            SautinSoft.UseOffice u = new UseOffice();
+            if (u.InitExcel() == 0)
+            {
+                u.Sheets.Custom(new string [] {"Page 1", "Table"});
+                u.ConvertFile(@"D:\Workbook.xlsx", @"d:\Result.pdf", UseOffice.eDirection.XLSX_to_PDF);
+                //Make other conversions ....
+                u.CloseExcel();
+            }
+            </code>
+        <code lang="vbnet">
+            Dim u As SautinSoft.UseOffice = New UseOffice()
+            If u.InitExcel() = 0 Then
+                u.Sheets.Custom(New String () {"Page 1", "Table"})
+                u.ConvertFile("D:\Workbook.xlsx", "d:\Result.pdf", UseOffice.eDirection.XLSX_to_PDF)
+                'Make other conversions ....
+                u.CloseExcel()
+            End If
+            </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CExcelOptions.SheetRange(System.Int32,System.Int32)">
+      <summary>
+            Allows to specify custom sheets from X to Y
+            </summary>
+      <param name="fromSheetNum">Start number</param>
+      <param name="toSheetNum">End number</param>
+      <example>
+        <code lang="cs">
+            SautinSoft.UseOffice u = new UseOffice();
+            if (u.InitExcel() == 0)
+            {
+                u.Sheets.Range(5,7);
+                u.ConvertFile(@"D:\Workbook.xlsx", @"d:\Result.pdf", UseOffice.eDirection.XLSX_to_PDF);
+                //Make other conversions ....
+                u.CloseExcel();
+            }
+            </code>
+        <code lang="vbnet">
+            Dim u As SautinSoft.UseOffice = New UseOffice()
+            If u.InitExcel() = 0 Then
+                u.Sheets.Range(5,7)
+                u.ConvertFile("D:\Workbook.xlsx", "d:\Result.pdf", UseOffice.eDirection.XLSX_to_PDF)
+                'Make other conversions ....
+                u.CloseExcel()
+            End If
+            </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.ExcelOptions">
+      <summary>
+            Allows to specify some Excel options (sheet numbers, how to fit a sheet on page) for converting.
+            </summary>
+      <remarks>You may specify: all, even, odd and custom sheets. For example:<br /><br /><img src="../Overview/pictures/exceltopdf.csheet.custom.method.png" /></remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert custom Excel sheets to PDF\sample.cs" title="How to convert custom Excel sheets to a PDF document in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert custom Excel sheets to PDF\sample.vb" title="How to convert custom Excel sheets to a PDF document in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.Reports">
+      <summary>
+             Allows to set report's names which you want to export in PDF
+            </summary>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert Access Report to PDF file\sample.cs" title="How to convert an Access report to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert Access Report to PDF file\sample.vb" title="How to convert an Access report to a PDF in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.DataBasePassword">
+      <summary>
+            Allows to specify a password to convert protected Access database
+            </summary>
+    </member>
+    <member name="T:SautinSoft.UseOffice.CPageStyle">
+      <summary>
+            Allows to specify page properties for output PDF document: page size, orientation, page margins and page numbers
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/pagestyle.property1.png" />
+        <br />
+        <br />
+        <img src="../Overview/pictures/pagestyle.property2.png" />
+        <br />
+        <br />
+        <img src="../Overview/pictures/pagestyle.property3.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert DOC file to RTF file\sample.cs" title="How to convert a DOC file to a RTF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert DOC file to RTF file\sample.vb" title="How to convert a DOC file to a RTF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="T:SautinSoft.UseOffice.CPageStyle.CPageSize">
+      <summary>
+            Allows to set page size for output PDF document
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert HTML file to PDF file\sample.cs" title="How to convert a HTML file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert HTML file to PDF file\sample.vb" title="How to convert a HTML file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.#ctor">
+      <summary>
+            Creates an instance of <see cref="T:SautinSoft.UseOffice.CPageStyle.CPageSize" /></summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.CPageSize.WidthMm">
+      <summary>
+            Sets the page width in millimeters. (Doesn't acceptable for Excel documents).
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/pagestyle.property1.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.CPageSize.WidthInch">
+      <summary>
+            Sets the page width in inches. (Doesn't acceptable for Excel documents).
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/pagestyle.property1.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.CPageSize.HeightMm">
+      <summary>
+            Sets the page height in millimeters. (Doesn't acceptable for Excel documents).
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/pagestyle.property1.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.CPageSize.HeightInch">
+      <summary>
+            Sets the page height in inches. (Doesn't acceptable for Excel documents).
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/pagestyle.property1.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.Auto">
+      <summary>
+            Set default page size
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert PPTX file to RTF file\sample.cs" title="How to convert a PPTX file to a RTF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert PPTX file to RTF file\sample.vb" title="How to convert a PPTX file to a RTF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.A3">
+      <summary>
+            Set A3 page size, 297 x 420 mm, 11.69 x 16.54 In
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.A4">
+      <summary>
+            Set A4 page size, 210 x 297 mm, 8.26 x 11.69 In
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.A5">
+      <summary>
+            Set A5 page size, 148 x 210 mm, 5.82 x 8.26 In
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.A6">
+      <summary>
+            Set A6 page size, 105 x 148 mm, 4.13 x 5.82 In 
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.B5Jis">
+      <summary>
+            Set B5Jis page size, 182 x 257 mm, 7.16 x 10.11 In
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.B5Iso">
+      <summary>
+            Set B5Iso page size, 176 x 250 mm, 6.93 x 9.83 In
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.B6">
+      <summary>
+            Set B6 page size, 128 x 182 mm, 5.04 x 7.16 In 
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.Folio">
+      <summary>
+            Set Folio page size, 210 x 330 mm, 8.26 x 12.99 In 
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.Letter">
+      <summary>
+            Set Letter size, 216 x 279 mm, 8.5 x 11 In
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.Legal">
+      <summary>
+            Set Legal page size, 216 x 356 mm, 8.5 x 14 In
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.Statement">
+      <summary>
+            Set Statement page size, 140 x 216 mm, 5.5 x 8.5 In
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.Executive">
+      <summary>
+            Set Executive page size, 184 x 267 mm, 7.25 x 10.5 In 
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.Oficio2">
+      <summary>
+            Set Oficio2 page size, 216 x 330 mm, 8.5 x 13 In
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.xlPaper10x14">
+      <summary>
+            10 in. x 14 in. Acceptable only for Excel documents.
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.xlPaper11x17">
+      <summary>
+            11 in. x 17 in. Acceptable only for Excel documents.
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.xlPaperA3">
+      <summary>
+            A3 (297 mm x 420 mm). Acceptable only for Excel documents.
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.xlPaperA4">
+      <summary>
+            A4 (210 mm x 297 mm). Acceptable only for Excel documents.
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.xlPaperA4Small">
+      <summary>
+            A4 Small (210 mm x 297 mm). Acceptable only for Excel documents.
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.xlPaperA5">
+      <summary>
+            A5 (148 mm x 210 mm). Acceptable only for Excel documents.
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.xlPaperB4">
+      <summary>
+            B4 (250 mm x 354 mm). Acceptable only for Excel documents.
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.xlPaperB5">
+      <summary>
+            B5 (182 mm x 257 mm). Acceptable only for Excel documents.
+            </summary>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageSize.xlPaperDsheet">
+      <summary>
+            C size sheet (176 mm x 250 mm). Acceptable only for Excel documents.
+            </summary>
+    </member>
+    <member name="T:SautinSoft.UseOffice.CPageStyle.CPageMargin">
+      <summary>
+            Allows to set page margins in mm and inches
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpage.style.cpagemargin.class.mm.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert HTML file to RTF file\sample.cs" title="How to convert a HTML file to a RTF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert HTML file to RTF file\sample.vb" title="How to convert a HTML file to a RTF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageMargin.#ctor">
+      <summary>
+            Creates a new instance of <see cref="T:SautinSoft.UseOffice.CPageStyle.CPageMargin" /> class 
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpage.style.cpagemargin.class.mm.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert DOC file to HTML file\sample.cs" title="How to convert a DOC file to a HTML file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert DOC file to HTML file\sample.vb" title="How to convert a DOC file to a HTML file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageMargin.Inch(System.Single)">
+      <summary>
+            Set value of page margin in inches
+            </summary>
+      <param name="valueInchMargin">value in inches</param>
+      <remarks>
+        <img src="../Overview/pictures/cpagestylecpagemargin.class.inch.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageMargin.mm(System.Single)">
+      <summary>
+            Set value of page margin in mm
+            </summary>
+      <param name="valueMmMarning">value in mm</param>
+      <remarks>
+        <img src="../Overview/pictures/cpage.style.cpagemargin.class.mm.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageMargin.Auto">
+      <summary>
+            Set default page margin
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpage.style.cpagemargin.class.mm.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="T:SautinSoft.UseOffice.CPageStyle.CPageOrientation">
+      <summary>
+            Allows to set page orientation for PDF document
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pageorientation.property.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert XLS file to CSV file\sample.cs" title="How to convert a XLS file to a CSV file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert XLS file to CSV file\sample.vb" title="How to convert a XLS file to a CSV file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageOrientation.#ctor">
+      <summary>
+            Creates a new instance of <see cref="T:SautinSoft.UseOffice.CPageStyle.CPageOrientation" /> class 
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pageorientation.property.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert PDF to DOCX - only Office 2013 and higher\sample.cs" title="How to convert a PDF file to a DOCX file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert PDF to DOCX - only Office 2013 and higher\sample.vb" title="How to convert a PDF file to a DOCX file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageOrientation.Portrait">
+      <summary>
+            Set portrait page orientation
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pageorientation.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageOrientation.Landscape">
+      <summary>
+            Set landscape page orientation
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pageorientation.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.CPageOrientation.Auto">
+      <summary>
+            Set default page orientation, portrait
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pageorientation.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.PageSize">
+      <summary>
+            Set page size
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagesize.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.PageOrientation">
+      <summary>
+            Set page orientation
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pageorientation.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.PageMarginLeft">
+      <summary>
+            Set left page margin
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagemarginleft.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.PageMarginRight">
+      <summary>
+            Set right page margin
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagemarginright.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.PageMarginTop">
+      <summary>
+            Set top page margin
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagemargintop.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CPageStyle.PageMarginBottom">
+      <summary>
+            Set bottom page margin
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/cpagestyle.pagemarginbottom.property.png" />
+        <br />
+        <br />
+      </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CPageStyle.#ctor">
+      <summary>
+            Creates a new instance of <see cref="T:SautinSoft.UseOffice.CPageStyle" /> class 
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/pagestyle.property1.png" />
+        <br />
+        <br />
+        <img src="../Overview/pictures/pagestyle.property2.png" />
+        <br />
+        <br />
+        <img src="../Overview/pictures/pagestyle.property3.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert Text file to PDF file\sample.cs" title="How to convert a Text file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert Text file to PDF file\sample.vb" title="How to convert a Text file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.InitOffice">
+      <summary>
+            Loads MS Office® library (MS Word, Excel, PowerPoint) from memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/initoffice.method.png" />
+        <br />
+        <br />
+      </remarks>
+      <returns>
+            0 - Loading successfully<br />
+            1 - Can't load MS Excel (Word and PowePoint are loaded successfully)<br />
+            10 - Can't load MS Word (Excel and PowerPoint are loaded successfully)<br />
+            11 - Can't load MS Word and Excel (PowerPoint loaded successfully)<br />
+            100 - Can't load MS PowerPoint (Excel and Word are loaded successfully)<br />
+            101 - Can't load MS Excel and PowerPoint (Word loaded successfully)<br />
+            110 - Can't load PowerPoint and Word (Excel loaded successfully)<br />
+            111 - Can't load MS Office
+            </returns>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert Word Excel PowerPoint files to PDF files\sample.cs" title="How to convert Word Excel PowerPoint files to PDF files in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert Word Excel PowerPoint files to PDF files\sample.vb" title="How to convert Word Excel PowerPoint files to PDF files in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.InitAccess">
+      <summary>
+            Loads MS Access® library in memory
+            </summary>
+      <returns>
+            0 - Loading successfully<br />
+            1 - Can't load MS Access® library in memory
+            </returns>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert Access Report to PDF file\sample.cs" title="How to convert an Access report to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert Access Report to PDF file\sample.vb" title="How to convert an Access report to a PDF in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.InitWord">
+      <summary>
+            Loads MS Word® library in memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/initword.method.png" />
+        <br />
+        <br />
+      </remarks>
+      <returns>
+            0 - Loading successfully<br />
+            1 - Can't load MS Word® library in memory
+            </returns>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert DOC file to PDF file\sample.cs" title="How to convert a DOC file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert DOC file to PDF file\sample.vb" title="How to convert a DOC file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.InitExcel">
+      <summary>
+            Loads MS Excel® library in memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/initexcel.method.png" />
+        <br />
+        <br />
+      </remarks>
+      <returns>
+            0 - Loading successfully<br />
+            1 - Can't load MS Excel® library in memory
+            </returns>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert XLS file to PDF file\sample.cs" title="How to convert a XLS file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert XLS file to PDF file\sample.vb" title="How to convert a XLS file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.InitPowerPoint">
+      <summary>
+            Loads MS PowerPoint® library in memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/initpowerpoint.method.png" />
+        <br />
+        <br />
+      </remarks>
+      <returns>
+            0 - Loading successfully<br />
+            1 - Can't load MS PowerPoint® library in memory
+            </returns>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert PPTX file to PDF file\sample.cs" title="How to convert a PPTX file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert PPTX file to PDF file\sample.vb" title="How to convert a PPTX file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CloseAccess">
+      <summary>
+            Releases MS Access® library from memory
+            </summary>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert Access Report to PDF file\sample.cs" title="How to convert an Access report to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert Access Report to PDF file\sample.vb" title="How to convert an Access report to a PDF in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CloseWord">
+      <summary>
+            Releases MS Word® library from memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/closeword.method.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert DOCX file to PDF file\sample.cs" title="How to convert a DOCX file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert DOCX file to PDF file\sample.vb" title="How to convert a DOCX file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CloseExcel">
+      <summary>
+            Releases MS Excel® library from memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/closeexcel.method.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert XLSX file to PDF file\sample.cs" title="How to convert a XLSX file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert XLSX file to PDF file\sample.vb" title="How to convert a XLSX file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.ClosePowerPoint">
+      <summary>
+            Releases MS PowerPoint® library from memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/closepowerpoint.method.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert PPT file to PDF file\sample.cs" title="How to convert a PPT file to a PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert PPT file to PDF file\sample.vb" title="How to convert a PPT file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.CloseOffice">
+      <summary>
+            Releases MS Office® library (MS Word, Excel, PowerPoint) from memory
+            </summary>
+      <remarks>
+        <img src="../Overview/pictures/closeoffice.method.png" />
+        <br />
+        <br />
+      </remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\ASP.Net - Convert Word Excel PowerPoint to PDF files\Default.aspx.cs" title="ASP.Net - Convert Word Excel PowerPoint to PDF files in C#">
+        </code>
+        <code lang="html" source="..\Packages\UseOffice .Net\Code samples\CSharp\ASP.Net - Convert Word Excel PowerPoint to PDF files\Default.aspx" title="ASPX - code">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\ASP.Net - Convert Word Excel PowerPoint to PDF files\Default.aspx.vb" title="ASP.Net - Convert Word Excel PowerPoint to PDF files in VB.Net">
+        </code>
+        <code lang="html" source="..\Packages\UseOffice .Net\Code samples\VB.Net\ASP.Net - Convert Word Excel PowerPoint to PDF files\Default.aspx" title="ASPX - code">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.KillProcesses(System.String)">
+      <summary>
+            Terminates process by its name
+            </summary>
+      <param name="_procName">Process name as string</param>
+      <remarks>Beware: this function kill all processes with specified name.<br /><br />If the MS Word, Excel or PowerPoint processes are still in memory you can use this method to terminate them.<br /><br /><img src="../Overview/pictures/closeoffice.method.png" /><br /><br /></remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\ASP.Net - Convert Word Excel PowerPoint to PDF files\Default.aspx.cs" title="ASP.Net - How to convert Word Excel PowerPoint files to PDF files in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\ASP.Net - Convert Word Excel PowerPoint to PDF files\Default.aspx.vb" title="ASP.Net - How to convert Word Excel PowerPoint files to PDF files in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.PageStyle">
+      <summary>
+            Allows to specify page properties for an output PDF document: page size, orientation and page margins.
+            </summary>
+      <remarks>
+            Allows to set page size using the property <see cref="P:SautinSoft.UseOffice.CPageStyle.PageSize" /><br /><br /><img src="../Overview/pictures/pagestyle.property1.png" /><br /><br />        
+            Allows to set page orientation using the property <see cref="P:SautinSoft.UseOffice.CPageStyle.PageOrientation" /><br /><br /><img src="../Overview/pictures/pagestyle.property2.png" /><br /><br />
+            Allows to set page margins size using properties: <see cref="P:SautinSoft.UseOffice.CPageStyle.PageMarginLeft" />, <see cref="P:SautinSoft.UseOffice.CPageStyle.PageMarginTop" />, <see cref="P:SautinSoft.UseOffice.CPageStyle.PageMarginRight" /> and <see cref="P:SautinSoft.UseOffice.CPageStyle.PageMarginBottom" /><br /><br /><img src="../Overview/pictures/pagestyle.property3.png" /><br /><br /></remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Set a custom page size - DOC to PDF\sample.cs" title="How to set a custom page size for a resulted PDF file in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Set a custom page size - DOC to PDF\sample.vb" title="How to set a custom page size for a resulted PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.Serial">
+      <summary>
+            Set activation key
+            </summary>
+      <remarks>After purchasing you will get the full version of product and your serial number. This parameter doesn't have any effect in the trial version. This parameter is necessary in full version, please don't forget to specify it by your serial number.<br /><br /><img src="../Overview/pictures/serial.property.png" /><br /><br /></remarks>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Activate the component after purchasing\sample.cs" title="How to activate the component after purchasing in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Activate the component after purchasing\sample.vb" title="How to activate the component after purchasing in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.TemporaryDirectory">
+      <summary>
+            Set a custom temporary directory for the method <see cref="M:SautinSoft.UseOffice.ConvertBytes(System.Byte[],SautinSoft.UseOffice.eDirection)">ConvertBytes(...)</see>.
+            </summary>
+      <remarks>By default the conversion process with help of the <see cref="M:SautinSoft.UseOffice.ConvertBytes(System.Byte[],SautinSoft.UseOffice.eDirection)">ConvertBytes(...)</see> will be done using temporary files inside the temp folder of current user.</remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.ProcessesID">
+      <summary>
+            Gets the list with ID of all processes which were started by UseOffice .Net.
+            </summary>
+      <remarks>Even if the process is closed now, it will be persist this list because it was started by our UseOffice .Net.</remarks>
+    </member>
+    <member name="P:SautinSoft.UseOffice.OfficeVersion">
+      <summary>
+            Gets the MS Office version.
+            </summary>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert RTF file to PDF file\sample.cs" title="How to convert a RTF file to a PDF file in VB.Net in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert RTF file to PDF file\sample.vb" title="How to convert a RTF file to a PDF file in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.Exceptions">
+      <summary>
+            Allows to get the list of all exceptions which appeared during of the conversion process.
+            </summary>
+    </member>
+    <member name="P:SautinSoft.UseOffice.CreateTraceFile">
+      <summary>
+            Forces the component to create a tracing file
+            </summary>
+      <remarks>This file contains a debug info to determine possible issues during converting.<br /><br /><img src="../Overview/pictures/tracefilepath.property.png" /><br /><br />
+            Default value: False<br /><br />
+            By default a tracing file will be created at "c:\useoffice-trace.txt", you can specify any path using the property <see cref="P:SautinSoft.UseOffice.TraceFilePath" title="TraceFilePath" />.
+            </remarks>
+      <example>
+        <code>
+            SautinSoft.UseOffice u = new UseOffice();
+            u.CreateTraceFile = true;
+            u.TraceFilePath = @"d:\trace.txt";
+            </code>
+        <code lang="vbnet">
+            Dim u As New SautinSoft.UseOffice()
+            u.CreateTraceFile = True
+            u.TraceFilePath = "d:\trace.txt"
+            </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.TraceFilePath">
+      <summary>
+            Path for creating a tracing file
+            </summary>
+      <remarks>This file contains a debug info to determine possible issues during converting.<br /><br />
+            Default value: "c:\useoffice-trace.txt"<br /><br /><img src="../Overview/pictures/tracefilepath.property.png" /><br /><br /></remarks>
+      <example>
+        <code>
+            SautinSoft.UseOffice u = new UseOffice();
+            u.CreateTraceFile = true;
+            u.TraceFilePath = @"d:\trace.txt";
+            </code>
+        <code lang="vbnet">
+            Dim u As New SautinSoft.UseOffice()
+            u.CreateTraceFile = True
+            u.TraceFilePath = "d:\trace.txt"
+            </code>
+      </example>
+    </member>
+    <member name="P:SautinSoft.UseOffice.DisableMacros">
+      <summary>
+            Disable all macros during conversion of Word, Excel and PowerPoint documents.
+            </summary>
+      <remarks>
+            Default value: true.
+            </remarks>
+    </member>
+    <member name="M:SautinSoft.UseOffice.ConvertBytes(System.Byte[],SautinSoft.UseOffice.eDirection)">
+      <summary>
+            Converts a document to another format in memory, see supported <see cref="T:SautinSoft.UseOffice.eDirection" title="converting directions" />.
+            </summary>
+      <param name="inputBytes">Input document as a byte array.</param>
+      <param name="convertingDirection">Desired converting direction.</param>
+      <remarks>
+        <u>
+          <b>Note:</b>
+        </u> Actually the conversion process will be done using temporary files inside the temp folder of current user.<br />
+            The temporary files will be removed immediately after the conversion process.
+            </remarks>
+      <returns>
+            null - in case of conversion failed. <br />
+            array of bytes containing the document in desired format - in case of successful conversion.
+            </returns>
+    </member>
+    <member name="M:SautinSoft.UseOffice.ConvertFile(System.String,System.String,SautinSoft.UseOffice.eDirection)">
+      <summary>
+            Converts a one file to a file with another format, see supported <see cref="T:SautinSoft.UseOffice.eDirection" title="converting directions" /></summary>
+      <remarks>
+        <img src="../Overview/pictures/convertfile.method.png" />
+        <br />
+        <br />
+      </remarks>
+      <param name="inputFile">A full local path to a file which you want to convert</param>
+      <param name="outputFile">A full local path to create output file</param>
+      <param name="convertingDirection">Desired converting direction</param>
+      <returns>
+            0 - Converting successfully<br />
+            1 - Can't open input file. Check that you are using full local path to input file, URL and relative path are not supported<br />
+            2 - Can't create output file. Please check that you have permissions to write by this path or probably this path already used by another application<br />
+            3 - Converting failed, please contact with our <a href="mailto:support@sautinsoft.com">Support Team</a><br />
+            4 - MS Office isn't installed. The component requires that any of these versions of MS Office should be installed: 2000, XP, 2003, 2007 or 2010<br /></returns>
+      <example>
+        <code lang="cs" source="..\Packages\UseOffice .Net\Code samples\CSharp\Convert Word Excel PowerPoint files to PDF files\sample.cs" title="How to convert Word Excel PowerPoint files to PDF files in C#">
+        </code>
+        <code lang="vbnet" source="..\Packages\UseOffice .Net\Code samples\VB.Net\Convert Word Excel PowerPoint files to PDF files\sample.vb" title="How to convert Word Excel PowerPoint files to PDF files in VB.Net">
+        </code>
+      </example>
+    </member>
+    <member name="M:SautinSoft.UseOffice.PrintPdf(System.String,System.Int32,System.Int32)">
+      <summary>
+            Prints the PDF file using default printer
+            </summary>
+      <remarks>To print PDF file the component will use the Acrobat Reader. Please be sure that you have Acrobat Reader installed in your system.<br /><br /><img src="../Overview/pictures/useoffice.printpdf.method2.png" /><br /><br /></remarks>
+      <param name="PdfFile">Path PDF file which you want to print</param>
+      <param name="timeInSecToLoadAdobeReader">Time in seconds for launching Acrobat Reader</param>
+      <param name="timeinSecToSendingDocumentOnPrint">Time in seconds for sending PDF document on print</param>
+    </member>
+    <member name="M:SautinSoft.UseOffice.PrintPdf(System.String)">
+      <summary>
+            Prints the PDF file using default printer
+            </summary>
+      <remarks>To print PDF file the component will use the Acrobat Reader. Please be sure that you have Acrobat Reader installed in your system.<br /><br /><img src="../Overview/pictures/useoffice.printpdf.method1.png" /><br /><br /></remarks>
+      <param name="PdfFile">Path PDF file which you want to print</param>
+    </member>
+  </members>
+</doc>

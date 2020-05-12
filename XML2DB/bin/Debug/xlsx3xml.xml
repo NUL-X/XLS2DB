@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><?mso-application progid="Excel.Sheet"?><Workbook xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x2="urn:schemas-microsoft-com:office:excel2" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+ <x:ExcelWorkbook>
+  <x:ActiveSheet>1</x:ActiveSheet>
+ </x:ExcelWorkbook>
+ <o:DocumentProperties />
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <ss:Alignment ss:Vertical="Bottom" />
+   <ss:Font ss:Color="#000000" ss:FontName="Calibri" ss:Size="11" />
+   <ss:NumberFormat />
+   <ss:Protection ss:Protected="1" x:HideFormula="0" />
+  </Style>
+  <Style ss:ID="S21">
+   <ss:Alignment />
+   <ss:Font ss:Bold="1" ss:Color="#0000FF" ss:FontName="Arial" ss:Size="18" ss:Italic="1" />
+   <ss:NumberFormat />
+   <ss:Protection ss:Protected="1" x:HideFormula="0" />
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Customers">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="15" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="4" ss:ExpandedColumnCount="3">
+   <Row ss:Index="1">
+    <Cell><Data ss:Type="String">employee_id</Data>
+    </Cell>
+    <Cell><Data ss:Type="String">last_name</Data>
+    </Cell>
+    <Cell><Data ss:Type="String">first_name</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="2">
+    <Cell><Data ss:Type="String">10</Data>
+    </Cell>
+    <Cell><Data ss:Type="String">Anderson</Data>
+    </Cell>
+    <Cell><Data ss:Type="String">Sarah</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="3">
+    <Cell><Data ss:Type="String">1</Data>
+    </Cell>
+    <Cell><Data ss:Type="String">Leo</Data>
+    </Cell>
+    <Cell><Data ss:Type="String">James</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4">
+    <Cell><Data ss:Type="String">2</Data>
+    </Cell>
+    <Cell><Data ss:Type="String">Ann</Data>
+    </Cell>
+    <Cell><Data ss:Type="String">Lili</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Footer x:Margin="0.75" />
+    <PageMargins x:Top="0.75" x:Bottom="0.5" />
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo />
+    <PaperSizeIndex>119</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Evaluation Warning">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="15" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="5" ss:ExpandedColumnCount="1">
+   <Row ss:Index="5" ss:Height="23.25">
+    <Cell ss:StyleID="S21"><Data ss:Type="String">Evaluation Only. Created with Aspose.Cells for .NET.Copyright 2003 - 2020 Aspose Pty Ltd.</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup />
+   <Print>
+    <PaperSizeIndex>9</PaperSizeIndex>
+   </Print>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

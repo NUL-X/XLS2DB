@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cnx));
             this.btn_cn = new System.Windows.Forms.Button();
             this.cb_auth = new System.Windows.Forms.ComboBox();
@@ -60,6 +61,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnl_btn = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnl_opt.SuspendLayout();
@@ -76,6 +78,7 @@
             this.btn_cn.Size = new System.Drawing.Size(123, 37);
             this.btn_cn.TabIndex = 0;
             this.btn_cn.Text = "Connect";
+            this.toolTip1.SetToolTip(this.btn_cn, "Connect to database");
             this.btn_cn.UseVisualStyleBackColor = false;
             this.btn_cn.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -107,6 +110,7 @@
             this.btn_cl.Size = new System.Drawing.Size(123, 37);
             this.btn_cl.TabIndex = 3;
             this.btn_cl.Text = "Cancel";
+            this.toolTip1.SetToolTip(this.btn_cl, "Cancel");
             this.btn_cl.UseVisualStyleBackColor = true;
             this.btn_cl.Click += new System.EventHandler(this.btn_cl_Click);
             // 
@@ -223,6 +227,7 @@
             this.btn_opt.Size = new System.Drawing.Size(123, 37);
             this.btn_opt.TabIndex = 16;
             this.btn_opt.Text = "Options>>";
+            this.toolTip1.SetToolTip(this.btn_opt, "More Options for Remote Connection");
             this.btn_opt.UseVisualStyleBackColor = true;
             this.btn_opt.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -400,6 +405,10 @@
             this.pnl_btn.Size = new System.Drawing.Size(723, 84);
             this.pnl_btn.TabIndex = 19;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipTitle = "Close";
+            // 
             // Cnx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -416,6 +425,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Cnx";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connect to DataBase";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
@@ -464,6 +474,7 @@
         private System.Windows.Forms.TextBox tb_ip4;
         private System.Windows.Forms.TextBox tb_ip3;
         private System.Windows.Forms.TextBox tb_ip2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
