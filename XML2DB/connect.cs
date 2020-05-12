@@ -83,11 +83,12 @@ namespace XML2DB
 
         }
 
-        public void DTtoSQL(DataTable dt)
+        public void DTtoSQL(DataTable dt, string tblName)
         {
 
             string cnStr = ConnectionString;
-            XmlUtils.export2DB(dt,cnStr,DBname);
+            MessageBox.Show(cnStr);
+            XmlUtils.export2DB(dt, cnStr, tblName);
         }
 
         public void ImportXML(string filename)

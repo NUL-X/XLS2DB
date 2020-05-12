@@ -38,10 +38,11 @@ namespace XMLUtils
             xmlData.WriteXml(xmlDocPath);
         }
 
-       
 
 
-        public static bool export2DB(DataTable xmlData, String connectionString,string DBName)
+
+
+        public static bool export2DB(DataTable xmlData, String connectionString, string TableName)
         {
 
             bool pass = false;
@@ -54,7 +55,7 @@ namespace XMLUtils
                     foreach (DataColumn c in xmlData.Columns)
                         bulkCopy.ColumnMappings.Add(c.ColumnName, c.ColumnName);
 
-                    bulkCopy.DestinationTableName = DBName;
+                    bulkCopy.DestinationTableName = TableName;
                     try
                     {
                         bulkCopy.WriteToServer(xmlData);

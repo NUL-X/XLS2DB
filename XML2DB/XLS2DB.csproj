@@ -91,20 +91,20 @@
     <Compile Include="about.Designer.cs">
       <DependentUpon>about.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConvertXml .cs" />
-    <Compile Include="DB2XML.cs" />
+    <Compile Include="FilesExportImport.cs" />
+    <Compile Include="ExportImportClass.cs" />
     <Compile Include="connect.cs" />
-    <Compile Include="Cnx.cs">
+    <Compile Include="ConnectionFrame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cnx.Designer.cs">
-      <DependentUpon>Cnx.cs</DependentUpon>
+    <Compile Include="ConnectionFrame.Designer.cs">
+      <DependentUpon>ConnectionFrame.cs</DependentUpon>
     </Compile>
-    <Compile Include="dbTables.cs">
+    <Compile Include="DataBaseToDGVUserCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="dbTables.Designer.cs">
-      <DependentUpon>dbTables.cs</DependentUpon>
+    <Compile Include="DataBaseToDGVUserCtrl.Designer.cs">
+      <DependentUpon>DataBaseToDGVUserCtrl.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -120,42 +120,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="db2dg.cs">
+    <Compile Include="DataBaseToDGV.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="db2dg.Designer.cs">
-      <DependentUpon>db2dg.cs</DependentUpon>
+    <Compile Include="DataBaseToDGV.Designer.cs">
+      <DependentUpon>DataBaseToDGV.cs</DependentUpon>
     </Compile>
-    <Compile Include="sv_DB.cs">
+    <Compile Include="xlsToDGV.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="sv_DB.Designer.cs">
-      <DependentUpon>sv_DB.cs</DependentUpon>
+    <Compile Include="xlsToDGV.Designer.cs">
+      <DependentUpon>xlsToDGV.cs</DependentUpon>
     </Compile>
-    <Compile Include="xls2dg.cs">
+    <Compile Include="xlsToDGVUserCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="xls2dg.Designer.cs">
-      <DependentUpon>xls2dg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="XlsDB.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="XlsDB.Designer.cs">
-      <DependentUpon>XlsDB.cs</DependentUpon>
+    <Compile Include="xlsToDGVUserCtrl.Designer.cs">
+      <DependentUpon>xlsToDGVUserCtrl.cs</DependentUpon>
     </Compile>
     <Compile Include="XMLUtils.cs" />
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cnx.resx">
-      <DependentUpon>Cnx.cs</DependentUpon>
+    <EmbeddedResource Include="ConnectionFrame.resx">
+      <DependentUpon>ConnectionFrame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="db2dg.resx">
-      <DependentUpon>db2dg.cs</DependentUpon>
+    <EmbeddedResource Include="DataBaseToDGV.resx">
+      <DependentUpon>DataBaseToDGV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dbTables.resx">
-      <DependentUpon>dbTables.cs</DependentUpon>
+    <EmbeddedResource Include="DataBaseToDGVUserCtrl.resx">
+      <DependentUpon>DataBaseToDGVUserCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -172,14 +166,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="sv_DB.resx">
-      <DependentUpon>sv_DB.cs</DependentUpon>
+    <EmbeddedResource Include="xlsToDGV.resx">
+      <DependentUpon>xlsToDGV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="xls2dg.resx">
-      <DependentUpon>xls2dg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="XlsDB.resx">
-      <DependentUpon>XlsDB.cs</DependentUpon>
+    <EmbeddedResource Include="xlsToDGVUserCtrl.resx">
+      <DependentUpon>xlsToDGVUserCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

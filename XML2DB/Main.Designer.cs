@@ -36,7 +36,7 @@ namespace XML2DB
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.menu1 = new XML2DB.Menu();
-            this.db2dg2 = new XML2DB.db2dg();
+            this.db2dg2 = new XML2DB.DataBaseToDGV();
             this.pb_close = new System.Windows.Forms.PictureBox();
             this.pb_min = new System.Windows.Forms.PictureBox();
             this.pn_main = new System.Windows.Forms.Panel();
@@ -46,7 +46,7 @@ namespace XML2DB
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.xls2dg1 = new XML2DB.xls2dg();
+            this.xls2dg1 = new XML2DB.xlsToDGV();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_min)).BeginInit();
@@ -249,8 +249,8 @@ namespace XML2DB
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
        
-        private db2dg db2dg2;
+        private DataBaseToDGV db2dg2;
         private System.Windows.Forms.ToolTip toolTip1;
-        private xls2dg xls2dg1;
+        private xlsToDGV xls2dg1;
     }
 }
