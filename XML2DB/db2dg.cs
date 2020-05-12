@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using System.IO;
-using System.Windows.Forms.VisualStyles;
+
 
 namespace XML2DB
 {
@@ -126,18 +119,16 @@ namespace XML2DB
             if (e.KeyCode == Keys.Enter)
             {
                 string searchValue = tb_search.Text;
-
-                    dg_SQL.SelectionMode = DataGridViewSelectionMode.CellSelect;
+                dg_SQL.SelectionMode = DataGridViewSelectionMode.CellSelect;
                 try
                 {
                     foreach (DataGridViewRow row in dg_SQL.Rows)
                     {
-                        foreach (DataGridViewColumn col in dg_SQL.Columns)
+                     foreach (DataGridViewColumn col in dg_SQL.Columns)
+                     {
+                       if (row.Cells[col.Index].Value.ToString().Equals(searchValue))
                         {
-                            if (row.Cells[col.Index].Value.ToString().Equals(searchValue))
-                            {
-
-                                dg_SQL.Rows[row.Index].Cells[col.Index].Selected = true;
+                          dg_SQL.Rows[row.Index].Cells[col.Index].Selected = true;
 
                                 break;
                             }
@@ -148,11 +139,8 @@ namespace XML2DB
                             }
                         }
                     }
-
-
-
-                }
-                catch (Exception ex)
+                 
+                }catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

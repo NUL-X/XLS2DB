@@ -14,7 +14,6 @@ using XMLUtils;
 using ClosedXML.Excel;
 using System.IO;
 using System.Data.OleDb;
-using Spire.Xls;
 using OfficeOpenXml;
 
 namespace XML2DB

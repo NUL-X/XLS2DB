@@ -368,7 +368,6 @@
             this.Controls.Add(this.pn_editDG);
             this.Name = "db2dg";
             this.Size = new System.Drawing.Size(1425, 573);
-            this.Load += new System.EventHandler(this.db2dg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_SQL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_add)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_del)).EndInit();

@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using Microsoft.Office.Interop.Excel;
 using System.Data;
 using System.Data.OleDb;
 namespace XML2DB
