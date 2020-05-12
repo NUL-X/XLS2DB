@@ -252,5 +252,19 @@ namespace XML2DB
 
             MessageBox.Show("Added Successfully to your DataBase", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void xlsDB1_VisibleChanged(object sender, EventArgs e)
+        {
+            if (xlsDB1.Visible)
+            {
+                this.btn_SaveToDB.Visible = true;
+                sqlsave = true;
+            }
+            else
+            {
+                this.btn_SaveToDB.Visible = false;
+                sqlsave = false;
+            }
+        }
     }
     }

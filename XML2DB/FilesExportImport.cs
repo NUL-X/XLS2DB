@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Data.OleDb;
+using System.Windows.Forms;
+
 namespace XML2DB
 {
     class ConvertXml
@@ -42,6 +44,7 @@ namespace XML2DB
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
 
             return IsCreated;
