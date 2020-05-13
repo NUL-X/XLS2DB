@@ -77,7 +77,7 @@ namespace XML2DB
             {
                XmlUtils.exportXmlData((DataTable)xmlDataGrid.DataSource, fileName + ".xml");
 
-               MessageBox.Show("Success", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+               MessageBox.Show("Xml File is created", "Done", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
                 
         }
@@ -88,7 +88,7 @@ namespace XML2DB
             {
                 XmlUtils.exportXmlData((DataTable)xmlDataGrid.DataSource, fileName + ".xml");
 
-                MessageBox.Show("Success", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Xml File is created", "Done", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 
         }
@@ -118,7 +118,7 @@ namespace XML2DB
         }
 
        
-        
+        //Convert XLS file to XML
         
         public void XLS2XML(string file)
         {
@@ -126,11 +126,12 @@ namespace XML2DB
             DataSet ds = new DataSet();
             ds.Tables.Add(dt);
             ds.WriteXml("ThisisXML.xml");
-            MessageBox.Show("Success");
-
-
 
         }
+
+
+
+
 
         public static DataTable GetDataTableFromExcel(string path, bool hasHeader = true)
         {

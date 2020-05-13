@@ -200,7 +200,7 @@ namespace XML2DB
                     dg_SQL.ReadOnly = false;
                     dg_SQL.BeginEdit(true);
                     this.lb_editOn.Visible = true;
-
+                
                 }
                 else
                 {
@@ -264,6 +264,37 @@ namespace XML2DB
             {
                 this.btn_SaveToDB.Visible = false;
                 sqlsave = false;
+            }
+        }
+
+        private void dg_SQL_SelectionChanged(object sender, EventArgs e)
+        {
+            if (lb_editOn.Visible.Equals(true))
+            {
+                lb_editOn.Visible = false;
+                ActivateMod = false;
+            }
+        }
+
+        private void dg_SQL_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(lb_editOn.Visible.Equals(true))
+                {
+                    lb_editOn.Visible = false;
+                    ActivateMod = false;
+                }
+            }
+        }
+
+        private void dg_SQL_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (lb_editOn.Visible.Equals(true))
+            {
+                lb_editOn.Visible = false;
+                ActivateMod = false;
+                
             }
         }
     }

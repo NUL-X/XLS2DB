@@ -349,5 +349,26 @@ namespace XML2DB
         {
 
         }
+
+        private void dg_SQL_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (lb_editOn.Visible.Equals(true))
+            {
+                lb_editOn.Visible = false;
+                ActivateMod = false;
+            }
+        }
+
+        private void dg_SQL_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lb_editOn.Visible.Equals(true))
+                {
+                    lb_editOn.Visible = false;
+                    ActivateMod = false;
+                }
+            }
+        }
     }
 }

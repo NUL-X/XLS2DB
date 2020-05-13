@@ -51,8 +51,8 @@
             this.pn_editDG = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tb_search = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.xlsDB1 = new XML2DB.xlsToDGVUserCtrl();
             this.btn_SaveToDB = new System.Windows.Forms.Button();
+            this.xlsDB1 = new XML2DB.xlsToDGVUserCtrl();
             this.pn_save.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_save_db)).BeginInit();
@@ -295,6 +295,9 @@
             this.dg_SQL.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dg_SQL.Size = new System.Drawing.Size(1279, 423);
             this.dg_SQL.TabIndex = 18;
+            this.dg_SQL.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_SQL_CellLeave);
+            this.dg_SQL.SelectionChanged += new System.EventHandler(this.dg_SQL_SelectionChanged);
+            this.dg_SQL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dg_SQL_KeyDown);
             // 
             // pn_editDG
             // 
@@ -330,16 +333,6 @@
             this.tb_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_search_KeyDown);
             this.tb_search.Leave += new System.EventHandler(this.tb_search_Leave);
             // 
-            // xlsDB1
-            // 
-            this.xlsDB1.BackColor = System.Drawing.Color.SteelBlue;
-            this.xlsDB1.Location = new System.Drawing.Point(897, 99);
-            this.xlsDB1.Name = "xlsDB1";
-            this.xlsDB1.Size = new System.Drawing.Size(428, 423);
-            this.xlsDB1.TabIndex = 29;
-            this.xlsDB1.Visible = false;
-            this.xlsDB1.VisibleChanged += new System.EventHandler(this.xlsDB1_VisibleChanged);
-            // 
             // btn_SaveToDB
             // 
             this.btn_SaveToDB.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -356,6 +349,16 @@
             this.btn_SaveToDB.UseVisualStyleBackColor = false;
             this.btn_SaveToDB.Visible = false;
             this.btn_SaveToDB.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // xlsDB1
+            // 
+            this.xlsDB1.BackColor = System.Drawing.Color.SteelBlue;
+            this.xlsDB1.Location = new System.Drawing.Point(897, 99);
+            this.xlsDB1.Name = "xlsDB1";
+            this.xlsDB1.Size = new System.Drawing.Size(428, 423);
+            this.xlsDB1.TabIndex = 29;
+            this.xlsDB1.Visible = false;
+            this.xlsDB1.VisibleChanged += new System.EventHandler(this.xlsDB1_VisibleChanged);
             // 
             // xlsToDGV
             // 

@@ -67,7 +67,6 @@ C:\Users\Spectre\Desktop\github\XLS2DB\XML2DB\obj\Debug\XLS2DB.csproj.GenerateRe
 C:\Users\Spectre\Desktop\github\XLS2DB\XML2DB\obj\Debug\XLS2DB.csproj.CopyComplete
 C:\Users\Spectre\Desktop\github\XLS2DB\XML2DB\obj\Debug\XML2DB.exe
 C:\Users\Spectre\Desktop\github\XLS2DB\XML2DB\obj\Debug\XML2DB.pdb
-C:\Users\Spectre\source\repos\XLS2DB\XML2DB\bin\Debug\System.IO.FileSystem.Primitives.dll
 C:\Users\Spectre\source\repos\XLS2DB\XML2DB\obj\Debug\XML2DB.ConnectionFrame.resources
 C:\Users\Spectre\source\repos\XLS2DB\XML2DB\obj\Debug\XML2DB.DataBaseToDGV.resources
 C:\Users\Spectre\source\repos\XLS2DB\XML2DB\obj\Debug\XML2DB.DataBaseToDGVUserCtrl.resources

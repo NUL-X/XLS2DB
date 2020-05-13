@@ -32,7 +32,7 @@ namespace XML2DB
             {
                 con = new SqlConnection(ConnectionString);
                 con.Open();
-                MessageBox.Show("Connection Successfully!!");
+                MessageBox.Show("Connection Successfully!!","Done",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (SqlException ex)
             {
@@ -49,14 +49,6 @@ namespace XML2DB
 
 
 
-        public object ShowDataInGridView(string Query_)
-        {
-            SqlDataAdapter dr = new SqlDataAdapter(Query_, ConnectionString);
-            DataSet ds = new DataSet();
-            dr.Fill(ds);
-            object dataum = ds.Tables[0];
-            return dataum;
-        }
 
         public string[] GetAllTables()
         {
@@ -71,29 +63,22 @@ namespace XML2DB
         public void TableToXml(string tableName)
         {
             
-
             SqlCommand cmd = new SqlCommand("SELECT * FROM " + tableName, new SqlConnection(ConnectionString));
             DataTable dt = new DataTable();
             new SqlDataAdapter(cmd).Fill(dt);
 
             dt.TableName = tableName;
             dt.WriteXml(tableName+".xml");
-            //dt.WriteXmlSchema("Schema File Address");
-            MessageBox.Show("XMLWriting is successful!!");
 
         }
 
         public void DTtoSQL(DataTable dt, string tblName)
         {
-
             string cnStr = ConnectionString;
-            MessageBox.Show(cnStr);
             XmlUtils.export2DB(dt, cnStr, tblName);
         }
 
-        public void ImportXML(string filename)
-        {
-        }
+
 
     }
 }
