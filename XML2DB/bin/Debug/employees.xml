@@ -339,6 +339,12 @@
     <first_name>Sarah</first_name>
   </employees>
   <employees>
+    <employee_id>158</employee_id>
+    <last_name>test</last_name>
+    <first_name>test</first_name>
+    <salary>180000.0000</salary>
+  </employees>
+  <employees>
     <employee_id>2585</employee_id>
     <last_name>dimiter</last_name>
     <first_name>chialkovsky</first_name>
@@ -347,5 +353,11 @@
     <employee_id>158</employee_id>
     <last_name>Andy</last_name>
     <first_name>Sarah</first_name>
+  </employees>
+  <employees>
+    <employee_id>555777</employee_id>
+    <last_name>test</last_name>
+    <first_name>test</first_name>
+    <salary>180000.0000</salary>
   </employees>
 </DocumentElement>

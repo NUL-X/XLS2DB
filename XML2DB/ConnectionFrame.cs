@@ -97,7 +97,10 @@ namespace XML2DB
 
             dbt = new DataBaseToDGVUserCtrl(tb,tb.Length);
             xdb = new xlsToDGVUserCtrl(tb,tb.Length);
-          
+                 
+            
+            
+
             //dbt.Visible = true;
             cn.CloseConnection();
             this.Dispose();

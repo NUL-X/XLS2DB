@@ -40,6 +40,7 @@ namespace XML2DB
             InitializeComponent();
             tb_names= tb;
 
+
         }
         public DataBaseToDGVUserCtrl(String[] tb, int length)
         {
@@ -69,7 +70,8 @@ namespace XML2DB
                 cnx.Show();
         
                  this.Visible = false;
-                
+                 
+
             }
             else
             {

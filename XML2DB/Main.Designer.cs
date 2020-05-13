@@ -37,6 +37,7 @@ namespace XML2DB
             this.panel1 = new System.Windows.Forms.Panel();
             this.menu1 = new XML2DB.Menu();
             this.db2dg2 = new XML2DB.DataBaseToDGV();
+            this.xls2dg1 = new XML2DB.xlsToDGV();
             this.pb_close = new System.Windows.Forms.PictureBox();
             this.pb_min = new System.Windows.Forms.PictureBox();
             this.pn_main = new System.Windows.Forms.Panel();
@@ -46,7 +47,6 @@ namespace XML2DB
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.xls2dg1 = new XML2DB.xlsToDGV();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_min)).BeginInit();
@@ -87,6 +87,14 @@ namespace XML2DB
             this.db2dg2.Size = new System.Drawing.Size(1428, 571);
             this.db2dg2.TabIndex = 1;
             this.db2dg2.Visible = false;
+            // 
+            // xls2dg1
+            // 
+            this.bunifuTransition1.SetDecoration(this.xls2dg1, BunifuAnimatorNS.DecorationType.None);
+            this.xls2dg1.Location = new System.Drawing.Point(3, -2);
+            this.xls2dg1.Name = "xls2dg1";
+            this.xls2dg1.Size = new System.Drawing.Size(1423, 573);
+            this.xls2dg1.TabIndex = 5;
             // 
             // pb_close
             // 
@@ -174,7 +182,7 @@ namespace XML2DB
             // 
             this.label1.AutoSize = true;
             this.bunifuTransition1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(660, 144);
             this.label1.Name = "label1";
@@ -202,14 +210,6 @@ namespace XML2DB
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 0F;
             this.bunifuTransition1.DefaultAnimation = animation1;
-            // 
-            // xls2dg1
-            // 
-            this.bunifuTransition1.SetDecoration(this.xls2dg1, BunifuAnimatorNS.DecorationType.None);
-            this.xls2dg1.Location = new System.Drawing.Point(3, -2);
-            this.xls2dg1.Name = "xls2dg1";
-            this.xls2dg1.Size = new System.Drawing.Size(1423, 573);
-            this.xls2dg1.TabIndex = 5;
             // 
             // Main
             // 

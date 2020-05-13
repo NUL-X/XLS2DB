@@ -29,6 +29,8 @@ namespace XML2DB
             InitializeComponent();
             tb_names2 = tb;
             tb_len = length;
+            
+
         }
 
         private void btn_cnx_Click(object sender, EventArgs e)
