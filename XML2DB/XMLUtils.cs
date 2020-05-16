@@ -39,12 +39,8 @@ namespace XMLUtils
         }
 
 
-
-
-
         public static bool export2DB(DataTable xmlData, String connectionString, string TableName)
         {
-
             bool pass = false;
             //string connectionString = @"Data Source = ServerName/Instance; Integrated Security=true; Initial Catalog=Database";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -73,7 +69,6 @@ namespace XMLUtils
         }
 
 
-
         public static bool export2CSV(DataGridView dgv, string filename)
         {
             bool pass = false;
@@ -87,11 +82,11 @@ namespace XMLUtils
                 var cells = row.Cells.Cast<DataGridViewCell>();
                 sb.AppendLine(string.Join(",", cells.Select(cell => "\"" + cell.Value + "\"").ToArray()));
             }
+
             System.IO.File.WriteAllText(filename, sb.ToString());
             pass = true;
 
             return pass;
         }
-
     }
 }

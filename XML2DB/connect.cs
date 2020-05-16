@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -16,14 +15,14 @@ namespace XML2DB
 
         public object ConfigurationManager { get; private set; }
 
-        public Connection(string cs,string dbName)
+        public Connection(string cs, string dbName)
         {
             ConnectionString = cs;
             DBname = dbName;
         }
+
         public Connection()
         {
-
         }
 
         public void OpenConection()
@@ -32,13 +31,12 @@ namespace XML2DB
             {
                 con = new SqlConnection(ConnectionString);
                 con.Open();
-                MessageBox.Show("Connection Successfully!!","Done",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Connection Successfully!!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
 
@@ -46,8 +44,6 @@ namespace XML2DB
         {
             con.Close();
         }
-
-
 
 
         public string[] GetAllTables()
@@ -62,14 +58,12 @@ namespace XML2DB
 
         public void TableToXml(string tableName)
         {
-            
             SqlCommand cmd = new SqlCommand("SELECT * FROM " + tableName, new SqlConnection(ConnectionString));
             DataTable dt = new DataTable();
             new SqlDataAdapter(cmd).Fill(dt);
 
             dt.TableName = tableName;
-            dt.WriteXml(tableName+".xml");
-
+            dt.WriteXml(tableName + ".xml");
         }
 
         public void DTtoSQL(DataTable dt, string tblName)
@@ -77,8 +71,5 @@ namespace XML2DB
             string cnStr = ConnectionString;
             XmlUtils.export2DB(dt, cnStr, tblName);
         }
-
-
-
     }
 }

@@ -15,87 +15,78 @@ namespace XML2DB
     public partial class DataBaseToDGVUserCtrl : UserControl
     {
         public static string connString = null;
-         
+
         Graphics gr = default(Graphics);
         Pen pen_draw = new Pen(Color.Black);
         SolidBrush sb = new SolidBrush(Color.SteelBlue);
         Connection cn;
+
         ConnectionFrame cnx;
+
         /*
          This variable for comboBox filling the comboBox
          */
         public static string[] tb_names;
-        public static int tb_length=-1;
+        public static int tb_length = -1;
         public static bool added = false;
+
         public static string cb_tbSelect;
         /*
          
          */
 
-       ExportImportClass dbx = new ExportImportClass();
-     
+        ExportImportClass dbx = new ExportImportClass();
+
 
         public DataBaseToDGVUserCtrl(String[] tb)
         {
             InitializeComponent();
-            tb_names= tb;
-
-
+            tb_names = tb;
         }
+
         public DataBaseToDGVUserCtrl(String[] tb, int length)
         {
             InitializeComponent();
             tb_names = tb;
             tb_length = length;
-
         }
 
         public DataBaseToDGVUserCtrl()
         {
             InitializeComponent();
-
-
         }
 
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            
-            try { 
-
-            cnx = new ConnectionFrame();
-
-            if (Application.OpenForms[cnx.Name] == null)
+            try
             {
-                cnx.Show();
-        
-                 this.Visible = false;
-                 
+                cnx = new ConnectionFrame();
 
+                if (Application.OpenForms[cnx.Name] == null)
+                {
+                    cnx.Show();
+
+                    this.Visible = false;
+                }
+                else
+                {
+                    Application.OpenForms[cnx.Name].Focus();
+                    Application.OpenForms[cnx.Name].Activate();
+                    Application.OpenForms[cnx.Name].BringToFront();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Application.OpenForms[cnx.Name].Focus();
-                Application.OpenForms[cnx.Name].Activate();
-                Application.OpenForms[cnx.Name].BringToFront();
-
-            }
-                
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message,"Error");
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 
         // draw triangle for the Tip
 
 
-
         private void pn_trg_Paint_1(object sender, PaintEventArgs e)
         {
-
             gr = e.Graphics;
             Point[] p = new Point[3];
             p[0].X = 0;
@@ -110,34 +101,31 @@ namespace XML2DB
             gr.FillPolygon(this.sb, p);
         }
 
-        public  void fillCB(String[] tb)
+        public void fillCB(String[] tb)
         {
             for (int i = 0; i < tb.Length; i++)
             {
                 this.cb_tb.Items.Add(tb[i]);
             }
-
-            }
+        }
 
         private void dbTables_Load(object sender, EventArgs e)
         {
-            
-           
         }
 
         private void dbTables_VisibleChanged(object sender, EventArgs e)
         {
-           if (tb_length > -1)
+            if (tb_length > -1)
             {
-
                 if (!added)
                 {
+                    for (int i = 0; i < tb_length; i++)
+                    {
+                        this.cb_tb.Items.Add(tb_names[i]);
+                    }
 
-              for (int i = 0; i< tb_length; i++)
-                {
-                  this.cb_tb.Items.Add(tb_names[i]);
-                }
-                    added = true; ;
+                    added = true;
+                    ;
                 }
             }
         }
@@ -146,11 +134,9 @@ namespace XML2DB
         {
             cb_tbSelect = cb_tb.SelectedItem.ToString();
             dbx.TableToXML(cb_tbSelect);
-            ((DataBaseToDGV)Parent).DG_Write(cb_tbSelect);
-            ((DataBaseToDGV)Parent).pn_editDG.Visible = true;
+            ((DataBaseToDGV) Parent).DG_Write(cb_tbSelect);
+            ((DataBaseToDGV) Parent).pn_editDG.Visible = true;
             this.Hide();
         }
-
     }
-    }
-
+}

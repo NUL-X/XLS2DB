@@ -21,7 +21,6 @@ namespace XML2DB
 
         public xlsToDGV()
         {
-            
             InitializeComponent();
             this.dg_SQL.AllowUserToAddRows = false;
         }
@@ -55,7 +54,6 @@ namespace XML2DB
                         {
                             if (row.Cells[col.Index].Value.ToString().Equals(searchValue))
                             {
-
                                 dg_SQL.Rows[row.Index].Cells[col.Index].Selected = true;
                                 dg_SQL.Focus();
                                 break;
@@ -67,15 +65,11 @@ namespace XML2DB
                             }
                         }
                     }
-
-
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
         }
 
@@ -112,13 +106,10 @@ namespace XML2DB
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-
-              
                 dbx.XLS2XML(openFileDialog1.FileName);
                 DataSet dataSet = new DataSet();
                 dataSet.ReadXml(@"ThisisXML.xml");
                 this.dg_SQL.DataSource = dataSet.Tables[0];
-
             }
         }
 
@@ -126,7 +117,6 @@ namespace XML2DB
         {
             string tableName = "Xls2Xls";
             dbx.DGV2XLS(this.dg_SQL, tableName);
-
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
@@ -141,7 +131,6 @@ namespace XML2DB
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
                     dbx.SaveDGtoXML(dg_SQL, Path.Combine(fbd.SelectedPath, "XLS2XML.xml"));
-
                 }
             }
         }
@@ -152,7 +141,7 @@ namespace XML2DB
             {
                 try
                 {
-                    DataTable ds = (DataTable)dg_SQL.DataSource;
+                    DataTable ds = (DataTable) dg_SQL.DataSource;
 
                     DataRow dr = ds.NewRow();
                     //index is selected row's index
@@ -160,7 +149,6 @@ namespace XML2DB
                     ds.Rows.InsertAt(dr, index);
 
                     dg_SQL.DataSource = ds;
-
 
 
                     //select the last row 
@@ -200,7 +188,6 @@ namespace XML2DB
                     dg_SQL.ReadOnly = false;
                     dg_SQL.BeginEdit(true);
                     this.lb_editOn.Visible = true;
-                
                 }
                 else
                 {
@@ -209,10 +196,8 @@ namespace XML2DB
                     dg_SQL.BeginEdit(false);
                     dg_SQL.ReadOnly = true;
                     this.lb_editOn.Visible = false;
-
                 }
             }
-
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -238,10 +223,10 @@ namespace XML2DB
                 sqlsave = false;
             }
             else
-            { 
+            {
                 this.btn_SaveToDB.Visible = true;
                 this.xlsDB1.Visible = true;
-               
+
                 sqlsave = true;
             }
         }
@@ -250,7 +235,8 @@ namespace XML2DB
         {
             dbx.DGV2DB(dg_SQL, xlsToDGVUserCtrl.cb_tbSelect1);
 
-            MessageBox.Show("Added Successfully to your DataBase", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Added Successfully to your DataBase", "Done", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void xlsDB1_VisibleChanged(object sender, EventArgs e)
@@ -280,7 +266,7 @@ namespace XML2DB
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if(lb_editOn.Visible.Equals(true))
+                if (lb_editOn.Visible.Equals(true))
                 {
                     lb_editOn.Visible = false;
                     ActivateMod = false;
@@ -294,8 +280,7 @@ namespace XML2DB
             {
                 lb_editOn.Visible = false;
                 ActivateMod = false;
-                
             }
         }
     }
-    }
+}

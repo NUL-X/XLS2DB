@@ -20,8 +20,8 @@ namespace XML2DB
 
         private void btn_about_Click(object sender, EventArgs e)
         {
-            about ab= new about();
-           
+            about ab = new about();
+
             if (Application.OpenForms[ab.Name] == null)
             {
                 ab.Show();
@@ -31,25 +31,21 @@ namespace XML2DB
                 Application.OpenForms[ab.Name].Focus();
                 Application.OpenForms[ab.Name].Activate();
                 Application.OpenForms[ab.Name].BringToFront();
-
             }
-            
         }
 
         private void btn_about_MouseHover(object sender, EventArgs e)
         {
-            
         }
 
         private void btn_db_Click(object sender, EventArgs e)
         {
-            ((Main)ParentForm).show_db2dg();
-
+            ((Main) ParentForm).show_db2dg();
         }
 
         private void btn_etd_Click(object sender, EventArgs e)
         {
-            ((Main)ParentForm).show_xls2dg();
+            ((Main) ParentForm).show_xls2dg();
         }
     }
 }

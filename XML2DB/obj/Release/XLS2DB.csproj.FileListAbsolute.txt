@@ -27,3 +27,33 @@ C:\Users\Spectre\source\repos\XLS2DB\XML2DB\obj\Release\XLS2DB.csproj.GenerateRe
 C:\Users\Spectre\source\repos\XLS2DB\XML2DB\obj\Release\XLS2DB.csproj.CopyComplete
 C:\Users\Spectre\source\repos\XLS2DB\XML2DB\obj\Release\XML2DB.exe
 C:\Users\Spectre\source\repos\XLS2DB\XML2DB\obj\Release\XML2DB.pdb
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\XML2DB.exe.config
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\XML2DB.exe
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\XML2DB.pdb
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\Bunifu_UI_v1.5.3.dll
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\ClosedXML.dll
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\DocumentFormat.OpenXml.dll
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\EPPlus.dll
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\ExcelNumberFormat.dll
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\System.IO.Packaging.dll
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\ClosedXML.pdb
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\ClosedXML.xml
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\DocumentFormat.OpenXml.xml
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\EPPlus.xml
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\ExcelNumberFormat.xml
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\bin\Release\System.IO.Packaging.xml
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XLS2DB.csprojAssemblyReference.cache
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.about.resources
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.ConnectionFrame.resources
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.DataBaseToDGV.resources
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.DataBaseToDGVUserCtrl.resources
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.Main.resources
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.Menu.resources
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.Properties.Resources.resources
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.xlsToDGV.resources
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.xlsToDGVUserCtrl.resources
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XLS2DB.csproj.GenerateResource.cache
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XLS2DB.csproj.CoreCompileInputs.cache
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XLS2DB.csproj.CopyComplete
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.exe
+C:\Users\MS7WN7D V3N0M\Documents\GitHub\XLS2DB\XML2DB\obj\Release\XML2DB.pdb

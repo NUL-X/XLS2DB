@@ -11,8 +11,8 @@ using System.Windows.Forms;
 
 namespace XML2DB
 {
-    public partial class about : Form {
-
+    public partial class about : Form
+    {
         /*
          * Variables to move the form
          */
@@ -26,14 +26,14 @@ namespace XML2DB
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
-(
-    int nLeftRect, // x-coordinate of upper-left corner
-    int nTopRect, // y-coordinate of upper-left corner
-    int nRightRect, // x-coordinate of lower-right corner
-    int nBottomRect, // y-coordinate of lower-right corner
-    int nWidthEllipse, // height of ellipse
-    int nHeightEllipse // width of ellipse
- );
+        (
+            int nLeftRect, // x-coordinate of upper-left corner
+            int nTopRect, // y-coordinate of upper-left corner
+            int nRightRect, // x-coordinate of lower-right corner
+            int nBottomRect, // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
 
         [DllImport("dwmapi.dll")]
         public static extern int DwmExtendFrameIntoClientArea(IntPtr hWnd, ref MARGINS pMarInset);
@@ -44,12 +44,12 @@ namespace XML2DB
         [DllImport("dwmapi.dll")]
         public static extern int DwmIsCompositionEnabled(ref int pfEnabled);
 
-        private bool m_aeroEnabled;                     // variables for box shadow
+        private bool m_aeroEnabled; // variables for box shadow
         private const int CS_DROPSHADOW = 0x00020000;
         private const int WM_NCPAINT = 0x0085;
         private const int WM_ACTIVATEAPP = 0x001C;
 
-        public struct MARGINS                           // struct for box shadow
+        public struct MARGINS // struct for box shadow
         {
             public int leftWidth;
             public int rightWidth;
@@ -57,7 +57,7 @@ namespace XML2DB
             public int bottomHeight;
         }
 
-        private const int WM_NCHITTEST = 0x84;          // variables for dragging the form
+        private const int WM_NCHITTEST = 0x84; // variables for dragging the form
         private const int HTCLIENT = 0x1;
         private const int HTCAPTION = 0x2;
 
@@ -83,6 +83,7 @@ namespace XML2DB
                 DwmIsCompositionEnabled(ref enabled);
                 return (enabled == 1) ? true : false;
             }
+
             return false;
         }
 
@@ -90,7 +91,7 @@ namespace XML2DB
         {
             switch (m.Msg)
             {
-                case WM_NCPAINT:                        // box shadow
+                case WM_NCPAINT: // box shadow
                     if (m_aeroEnabled)
                     {
                         var v = 2;
@@ -103,19 +104,18 @@ namespace XML2DB
                             topHeight = 1
                         };
                         DwmExtendFrameIntoClientArea(this.Handle, ref margins);
-
                     }
+
                     break;
                 default:
                     break;
             }
+
             base.WndProc(ref m);
 
-            if (m.Msg == WM_NCHITTEST && (int)m.Result == HTCLIENT)     // drag the form
-                m.Result = (IntPtr)HTCAPTION;
-
+            if (m.Msg == WM_NCHITTEST && (int) m.Result == HTCLIENT) // drag the form
+                m.Result = (IntPtr) HTCAPTION;
         }
-
 
 
         public about()
@@ -125,7 +125,6 @@ namespace XML2DB
 
         private void bunifuSeparator1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
@@ -176,7 +175,6 @@ namespace XML2DB
 
         private void about_Load(object sender, EventArgs e)
         {
-
         }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
@@ -187,18 +185,15 @@ namespace XML2DB
         private void about_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Close();
-
         }
 
         private void about_DoubleClick(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

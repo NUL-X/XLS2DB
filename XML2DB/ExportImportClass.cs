@@ -2,8 +2,6 @@
 using System.Linq;
 using System.Windows.Forms;
 using XMLUtils;
-
-
 using ClosedXML.Excel;
 using System.IO;
 using System.Data.OleDb;
@@ -14,15 +12,13 @@ namespace XML2DB
     class ExportImportClass
     {
         Connection con = new Connection();
-        public static string connStr ;
-        
+        public static string connStr;
+
 
         public void TableToXML(string tbName)
         {
             con.TableToXml(tbName);
-
         }
-
 
 
         // Save DataGridView To DataBase
@@ -33,14 +29,11 @@ namespace XML2DB
         }
 
 
-
-
-
         public void DGV2XLS(DataGridView dgv, string tablename)
         {
             DataTable dt = this.DGV2DT(dgv, tablename);
             // Export DataTable dt to Excel
-           
+
 
             using (var fbd = new FolderBrowserDialog())
             {
@@ -50,47 +43,38 @@ namespace XML2DB
                 {
                     using (XLWorkbook wb = new XLWorkbook())
                     {
-                         wb.Worksheets.Add(dt, "Customers");
-                        
-                        wb.SaveAs(@""+fbd.SelectedPath +"\\"+tablename + ".xlsx");
-                    }
+                        wb.Worksheets.Add(dt, "Customers");
 
+                        wb.SaveAs(@"" + fbd.SelectedPath + "\\" + tablename + ".xlsx");
+                    }
                 }
             }
-
         }
-
-
-
 
 
         public void DGtoXML(DataGridView xmlDataGrid, string fileName)
         {
             if (xmlDataGrid.ColumnCount > 0)
             {
-               XmlUtils.exportXmlData((DataTable)xmlDataGrid.DataSource, fileName + ".xml");
+                XmlUtils.exportXmlData((DataTable) xmlDataGrid.DataSource, fileName + ".xml");
 
-               MessageBox.Show("Xml File is created", "Done", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Xml File is created", "Done", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-                
         }
 
         public void SaveDGtoXML(DataGridView xmlDataGrid, string fileName)
         {
             if (xmlDataGrid.ColumnCount > 0)
             {
-                XmlUtils.exportXmlData((DataTable)xmlDataGrid.DataSource, fileName + ".xml");
+                XmlUtils.exportXmlData((DataTable) xmlDataGrid.DataSource, fileName + ".xml");
 
                 MessageBox.Show("Xml File is created", "Done", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-
         }
-      
 
 
-        public DataTable DGV2DT(DataGridView dgv, string tablename) 
+        public DataTable DGV2DT(DataGridView dgv, string tablename)
         {
-
             DataTable dt = new DataTable();
             foreach (DataGridViewColumn col in dgv.Columns)
             {
@@ -104,26 +88,24 @@ namespace XML2DB
                 {
                     dRow[cell.ColumnIndex] = cell.Value;
                 }
+
                 dt.Rows.Add(dRow);
             }
+
             dt.TableName = tablename;
-            return dt ;
+            return dt;
         }
 
-       
+
         //Convert XLS file to XML
-        
+
         public void XLS2XML(string file)
         {
             DataTable dt = GetDataTableFromExcel(file);
             DataSet ds = new DataSet();
             ds.Tables.Add(dt);
             ds.WriteXml("ThisisXML.xml");
-
         }
-
-
-
 
 
         public static DataTable GetDataTableFromExcel(string path, bool hasHeader = true)
@@ -136,12 +118,16 @@ namespace XML2DB
                 {
                     pck.Load(stream);
                 }
+
                 var ws = pck.Workbook.Worksheets.First();
                 DataTable tbl = new DataTable();
                 foreach (var firstRowCell in ws.Cells[1, 1, 1, ws.Dimension.End.Column])
                 {
-                    tbl.Columns.Add(hasHeader ? firstRowCell.Text : string.Format("Column {0}", firstRowCell.Start.Column));
+                    tbl.Columns.Add(hasHeader
+                        ? firstRowCell.Text
+                        : string.Format("Column {0}", firstRowCell.Start.Column));
                 }
+
                 var startRow = hasHeader ? 2 : 1;
                 for (int rowNum = startRow; rowNum <= ws.Dimension.End.Row; rowNum++)
                 {
@@ -152,17 +138,9 @@ namespace XML2DB
                         row[cell.Start.Column - 1] = cell.Text;
                     }
                 }
+
                 return tbl;
             }
         }
-
-
-
-
     }
-
-    
 }
-
-
-   

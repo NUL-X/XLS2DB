@@ -16,113 +16,99 @@ namespace XML2DB
 {
     public partial class ConnectionFrame : Form
     {
-         bool opt = false;
-         public  string connetionString="";
+        bool opt = false;
+        public string connetionString = "";
         Connection cn;
         DataBaseToDGVUserCtrl dbt;
         xlsToDGVUserCtrl xdb;
+
         public ConnectionFrame()
         {
-
             InitializeComponent();
             pnl_btn.Location = new Point(0, 280);
             this.Height = 385;
-
         }
 
 
-           
-
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            string connetionString= null;
-           
-            string auth     = cb_auth.Text;
-            string dbname   = this.tb_db.Text;
+            string connetionString = null;
+
+            string auth = cb_auth.Text;
+            string dbname = this.tb_db.Text;
             string username = this.tb_usr.Text;
             string password = this.tb_pwd.Text;
-            
+
             string instance = this.tb_instance.Text;
-            string port     = this.nm_port.Value.ToString();
-            string addr     = this.tb_ip1.Text + "." + this.tb_ip1.Text + "."+this.tb_ip3.Text + "." + this.tb_ip4.Text ;
+            string port = this.nm_port.Value.ToString();
+            string addr = this.tb_ip1.Text + "." + this.tb_ip1.Text + "." + this.tb_ip3.Text + "." + this.tb_ip4.Text;
 
-                if (this.opt == false) {
-
-                    if (auth.Equals("Windows Authentication")) {
-
+            if (this.opt == false)
+            {
+                if (auth.Equals("Windows Authentication"))
+                {
                     this.connetionString = @"Data Source=. ;Initial Catalog=" + dbname + ";Integrated Security = true";
-
-                    } else if (auth.Equals("SQLServer Authentication")) {
-
-
-                    this.connetionString = @"Data Source=.;Initial Catalog=" + dbname + ";User ID=" + username + ";Password=" + password + "";
-
-                    }
-
-                } else if (this.opt == true) {
-
-                    if (instance == "" || addr=="")
+                }
+                else if (auth.Equals("SQLServer Authentication"))
+                {
+                    this.connetionString = @"Data Source=.;Initial Catalog=" + dbname + ";User ID=" + username +
+                                           ";Password=" + password + "";
+                }
+            }
+            else if (this.opt == true)
+            {
+                if (instance == "" || addr == "")
+                {
+                    MessageBox.Show("Instance Name or Machine address is still empty!!", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    if (auth.Equals("Windows Authentication"))
                     {
-                        MessageBox.Show("Instance Name or Machine address is still empty!!","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        this.connetionString = @"Data Source=(" + addr + ")/" + instance + "," + port +
+                                               ";Network Library=DBMSSOCN;Initial Catalog=" + dbname +
+                                               ";Integrated Security = true";
                     }
-                    else
+                    else if (auth.Equals("SQLServer Authentication"))
                     {
-                        if (auth.Equals("Windows Authentication"))
-                        {
-
-
-                        this.connetionString = @"Data Source=(" + addr + ")/" + instance + "," + port + ";Network Library=DBMSSOCN;Initial Catalog=" + dbname + ";Integrated Security = true";
-                        }
-                        else if (auth.Equals("SQLServer Authentication"))
-                        {
-
-
-                        this.connetionString = @"Data Source=("+addr+")/"+instance+","+port+";Network Library=DBMSSOCN;Initial Catalog=" + dbname + ";User ID=" + username + ";Password=" + password + "";
-
-                        }
-                    
+                        this.connetionString = @"Data Source=(" + addr + ")/" + instance + "," + port +
+                                               ";Network Library=DBMSSOCN;Initial Catalog=" + dbname + ";User ID=" +
+                                               username + ";Password=" + password + "";
                     }
-                   }
+                }
+            }
 
 
-                //Connection to SQLServer
+            //Connection to SQLServer
 
-            cn = new Connection(this.connetionString,dbname);
+            cn = new Connection(this.connetionString, dbname);
             cn.OpenConection();
             Main main = new Main();
 
-            
+
             string[] tb = cn.GetAllTables();
 
-            dbt = new DataBaseToDGVUserCtrl(tb,tb.Length);
-            xdb = new xlsToDGVUserCtrl(tb,tb.Length);
-                 
-            
-            
+            dbt = new DataBaseToDGVUserCtrl(tb, tb.Length);
+            xdb = new xlsToDGVUserCtrl(tb, tb.Length);
+
 
             //dbt.Visible = true;
             cn.CloseConnection();
             this.Dispose();
-        
-            
-                   }
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
-      
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
 
@@ -136,19 +122,15 @@ namespace XML2DB
 
                 this.tb_pwd.Enabled = true;
                 this.tb_usr.Enabled = true;
-               
-
-            }else
+            }
+            else
             {
                 this.lbl_pwd.Enabled = false;
                 this.lbl_usr.Enabled = false;
 
-                this.tb_pwd.Enabled  = false;
-                this.tb_usr.Enabled  = false;
-
-                
+                this.tb_pwd.Enabled = false;
+                this.tb_usr.Enabled = false;
             }
-
         }
 
         private void btn_cl_Click(object sender, EventArgs e)
@@ -163,22 +145,21 @@ namespace XML2DB
                 this.pnl_opt.Visible = true;
                 this.opt = true;
                 this.Height = 503;
-              //  this.pnl_opt.Height = 100;
+                //  this.pnl_opt.Height = 100;
                 pnl_btn.Location = new Point(0, 400);
-                
+
                 this.btn_opt.Text = "Options<<";
             }
             else if (opt == true)
             {
                 this.pnl_opt.Visible = false;
-                this.opt = false; 
-               // this.pnl_opt.Height = 0;
-                pnl_btn.Location=new Point(0,280);
+                this.opt = false;
+                // this.pnl_opt.Height = 0;
+                pnl_btn.Location = new Point(0, 280);
                 this.Height = 385;
-               
-                
-                this.btn_opt.Text = "Options>>";
 
+
+                this.btn_opt.Text = "Options>>";
             }
         }
 
@@ -213,6 +194,5 @@ namespace XML2DB
                 e.Handled = true;
             }
         }
- 
     }
 }
