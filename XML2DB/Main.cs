@@ -14,7 +14,8 @@ namespace XML2DB
     public partial class Main : Form
     {
         private bool Drag;
-       // private bool dbex_click = false;
+
+        // private bool dbex_click = false;
         private int MouseX;
         private int MouseY;
 
@@ -23,14 +24,14 @@ namespace XML2DB
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
-    (
-        int nLeftRect, // x-coordinate of upper-left corner
-        int nTopRect, // y-coordinate of upper-left corner
-        int nRightRect, // x-coordinate of lower-right corner
-        int nBottomRect, // y-coordinate of lower-right corner
-        int nWidthEllipse, // height of ellipse
-        int nHeightEllipse // width of ellipse
-     );
+        (
+            int nLeftRect, // x-coordinate of upper-left corner
+            int nTopRect, // y-coordinate of upper-left corner
+            int nRightRect, // x-coordinate of lower-right corner
+            int nBottomRect, // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
 
         [DllImport("dwmapi.dll")]
         public static extern int DwmExtendFrameIntoClientArea(IntPtr hWnd, ref MARGINS pMarInset);
@@ -41,12 +42,12 @@ namespace XML2DB
         [DllImport("dwmapi.dll")]
         public static extern int DwmIsCompositionEnabled(ref int pfEnabled);
 
-        private bool m_aeroEnabled;                     // variables for box shadow
+        private bool m_aeroEnabled; // variables for box shadow
         private const int CS_DROPSHADOW = 0x00020000;
         private const int WM_NCPAINT = 0x0085;
         private const int WM_ACTIVATEAPP = 0x001C;
 
-        public struct MARGINS                           // struct for box shadow
+        public struct MARGINS // struct for box shadow
         {
             public int leftWidth;
             public int rightWidth;
@@ -54,7 +55,7 @@ namespace XML2DB
             public int bottomHeight;
         }
 
-        private const int WM_NCHITTEST = 0x84;          // variables for dragging the form
+        private const int WM_NCHITTEST = 0x84; // variables for dragging the form
         private const int HTCLIENT = 0x1;
         private const int HTCAPTION = 0x2;
 
@@ -80,6 +81,7 @@ namespace XML2DB
                 DwmIsCompositionEnabled(ref enabled);
                 return (enabled == 1) ? true : false;
             }
+
             return false;
         }
 
@@ -87,7 +89,7 @@ namespace XML2DB
         {
             switch (m.Msg)
             {
-                case WM_NCPAINT:                        // box shadow
+                case WM_NCPAINT: // box shadow
                     if (m_aeroEnabled)
                     {
                         var v = 2;
@@ -100,19 +102,18 @@ namespace XML2DB
                             topHeight = 1
                         };
                         DwmExtendFrameIntoClientArea(this.Handle, ref margins);
-
                     }
+
                     break;
                 default:
                     break;
             }
+
             base.WndProc(ref m);
 
-            if (m.Msg == WM_NCHITTEST && (int)m.Result == HTCLIENT)     // drag the form
-                m.Result = (IntPtr)HTCAPTION;
-
+            if (m.Msg == WM_NCHITTEST && (int) m.Result == HTCLIENT) // drag the form
+                m.Result = (IntPtr) HTCAPTION;
         }
-
 
 
         public Main()
@@ -121,17 +122,12 @@ namespace XML2DB
             this.db2dg2.Hide();
             // this.db2dg2.Parent = this;
             // used to control this Form from a user control 
-          
-
-
         }
-
 
 
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
             this.pb_close.BackColor = Color.LightSteelBlue;
-
         }
 
         private void pb_close_MouseLeave(object sender, EventArgs e)
@@ -161,12 +157,9 @@ namespace XML2DB
 
         private void lb_tbl_SizeChanged(object sender, EventArgs e)
         {
-
         }
 
-       
 
-        
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             Drag = true;
@@ -188,17 +181,10 @@ namespace XML2DB
             Drag = false;
         }
 
-       
-   
-
-
-
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-
         }
-
 
 
         private void pn_main_MouseDown(object sender, MouseEventArgs e)
@@ -225,29 +211,26 @@ namespace XML2DB
 
         public void menu_lb()
         {
-
         }
 
         public void show_db2dg()
         {
-           
-            this.db2dg2.Visible= true;
+            this.db2dg2.Visible = true;
             this.db2dg2.BringToFront();
         }
+
         public void show_Menu()
         {
             this.menu1.Show();
             this.db2dg2.Hide();
             this.xls2dg1.Hide();
             this.db2dg2.Visible = false;
-            
-            this.menu1.BringToFront();
 
+            this.menu1.BringToFront();
         }
 
         public void show_xls2dg()
         {
- 
             this.xls2dg1.Visible = true;
 
 
@@ -257,9 +240,6 @@ namespace XML2DB
 
         private void menu1_Load(object sender, EventArgs e)
         {
-
         }
-
-        
     }
 }

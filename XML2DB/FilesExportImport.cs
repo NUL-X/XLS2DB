@@ -22,7 +22,10 @@ namespace XML2DB
                 writer.Formatting = Formatting.Indented;
                 writer.Indentation = 2;
                 writer.WriteStartElement("tbl_" + RowName);
-                List<string> ColumnNames = dt.Columns.Cast<DataColumn>().ToList().Select(x => x.ColumnName).ToList(); // Column Names List  
+                List<string>
+                    ColumnNames =
+                        dt.Columns.Cast<DataColumn>().ToList().Select(x => x.ColumnName)
+                            .ToList(); // Column Names List  
                 List<DataRow> RowList = dt.Rows.Cast<DataRow>().ToList();
                 foreach (DataRow dr in RowList)
                 {
@@ -33,6 +36,7 @@ namespace XML2DB
                         writer.WriteString(dr.ItemArray[i].ToString());
                         writer.WriteEndElement();
                     }
+
                     writer.WriteEndElement();
                 }
 
@@ -48,12 +52,7 @@ namespace XML2DB
             }
 
             return IsCreated;
-
         }
-
-
-
-
 
 
         // Creating Xml File With Default FileName  
@@ -62,14 +61,19 @@ namespace XML2DB
             bool IsCreated = false;
             try
             {
-                string XmlFile = XlFile.Replace(Path.GetExtension(XlFile), "") + ".xml"; // Getting XMl file Name as Excel File Name  
+                string XmlFile =
+                    XlFile.Replace(Path.GetExtension(XlFile), "") +
+                    ".xml"; // Getting XMl file Name as Excel File Name  
                 System.Data.DataTable dt = GetTableDataXl(XlFile);
                 XmlTextWriter writer = new XmlTextWriter(XmlFile, System.Text.Encoding.UTF8);
                 writer.WriteStartDocument(true);
                 writer.Formatting = Formatting.Indented;
                 writer.Indentation = 2;
                 writer.WriteStartElement("tbl_" + RowName);
-                List<string> ColumnNames = dt.Columns.Cast<DataColumn>().ToList().Select(x => x.ColumnName).ToList(); // Column Names List  
+                List<string>
+                    ColumnNames =
+                        dt.Columns.Cast<DataColumn>().ToList().Select(x => x.ColumnName)
+                            .ToList(); // Column Names List  
                 List<DataRow> RowList = dt.Rows.Cast<DataRow>().ToList();
                 foreach (DataRow dr in RowList)
                 {
@@ -80,6 +84,7 @@ namespace XML2DB
                         writer.WriteString(dr.ItemArray[i].ToString());
                         writer.WriteEndElement();
                     }
+
                     writer.WriteEndElement();
                 }
 
@@ -94,12 +99,7 @@ namespace XML2DB
             }
 
             return IsCreated;
-
         }
-
-
-
-
 
 
         private System.Data.DataTable GetTableDataXl(string XlFile)
@@ -110,13 +110,18 @@ namespace XML2DB
                 string Ext = Path.GetExtension(XlFile);
                 string connectionString = "";
                 if (Ext == ".xls")
-                {   //For Excel 97-03  
-                    connectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source =" + XlFile + "; Extended Properties = 'Excel 8.0;HDR=YES'";
+                {
+                    //For Excel 97-03  
+                    connectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source =" + XlFile +
+                                       "; Extended Properties = 'Excel 8.0;HDR=YES'";
                 }
                 else if (Ext == ".xlsx")
-                {    //For Excel 07 and greater  
-                    connectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source =" + XlFile + "; Extended Properties = 'Excel 8.0;HDR=YES'";
+                {
+                    //For Excel 07 and greater  
+                    connectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source =" + XlFile +
+                                       "; Extended Properties = 'Excel 8.0;HDR=YES'";
                 }
+
                 OleDbConnection conn = new OleDbConnection(connectionString);
                 OleDbCommand cmd = new OleDbCommand();
                 OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
@@ -136,7 +141,8 @@ namespace XML2DB
                 conn.Close();
             }
             catch (Exception ex)
-            { }
+            {
+            }
 
             return dt;
         }
