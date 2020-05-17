@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace XML2DB
@@ -121,7 +115,7 @@ namespace XML2DB
             InitializeComponent();
             this.db2dg2.Hide();
             //ODBConnection.connectionString = "TEST:null:null";
-            MessageBox.Show(ODBConnection.connectionString, "info");
+            //MessageBox.Show(ODBConnection.connectionString, "info");
             // this.db2dg2.Parent = this;
             // used to control this Form from a user control 
         }

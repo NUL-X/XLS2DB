@@ -33,16 +33,9 @@ namespace XML2DB
             // TODO : Implement connection
             if (cn == null || cn.State == ConnectionState.Closed || cn.State == ConnectionState.Broken)
             {
-                try
+                using (cn = new SqlConnection(connectionString))
                 {
-                    using (cn = new SqlConnection(connectionString))
-                    {
-                        cn.Open();
-                    }
-                }
-                catch (SqlException sqle)
-                {
-                    Console.WriteLine(sqle);
+                    cn.Open();
                 }
             }
             return cn;

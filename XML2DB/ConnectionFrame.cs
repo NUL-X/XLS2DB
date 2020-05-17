@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace XML2DB
@@ -17,8 +8,6 @@ namespace XML2DB
     public partial class ConnectionFrame : Form
     {
         bool opt = false;
-        public string connetionString = "";
-        //Connection cn;
         private SqlConnection _cn;
         DataBaseToDGVUserCtrl dbt;
         xlsToDGVUserCtrl xdb;
@@ -48,32 +37,26 @@ namespace XML2DB
             {
                 if (auth.Equals("Windows Authentication"))
                 {
-                    // is this where am I supposed to test it @Yassine-Ag ??
-                    //this.connetionString = @"Data Source=. ;Initial Catalog=" + dbname + ";Integrated Security = true";
-                    
-                    
                     ODBConnection.connectionString = $"{dbname}:{username}:{password}";
-                    _cn = ODBConnection.getConnection();
+                    ODBConnection.winAuth = true;
                     
-                    
+                    /*_cn = ODBConnection.getConnection();
                     new Main();
-
-
                     string[] _tb = ODBConnection.GetAllTables();
-
                     dbt = new DataBaseToDGVUserCtrl(_tb, _tb.Length);
                     xdb = new xlsToDGVUserCtrl(_tb, _tb.Length);
                     dbt.Visible = true;
-                    return;
+                    return;*/
                 }
                 else if (auth.Equals("SQLServer Authentication"))
                 {
-                    this.connetionString = @"Data Source=.;Initial Catalog=" + dbname + ";User ID=" + username +
-                                           ";Password=" + password + "";
+                    ODBConnection.connectionString = $"{dbname}:{username}:{password}";
+                    ODBConnection.winAuth = false;
                 }
             }
             else if (this.opt == true)
             {
+                /*
                 if (instance == "" || addr == "")
                 {
                     MessageBox.Show("Instance Name or Machine address is still empty!!", "Warning",
@@ -93,13 +76,14 @@ namespace XML2DB
                                                ";Network Library=DBMSSOCN;Initial Catalog=" + dbname + ";User ID=" +
                                                username + ";Password=" + password + "";
                     }
-                }
+                }*/
+                throw new NotImplementedException();
             }
 
 
             //Connection to SQLServer
 
-            //cn = new Connection(this.connetionString, dbname);
+            _cn = ODBConnection.getConnection();
             //cn.OpenConection();
             Main main = new Main();
 
