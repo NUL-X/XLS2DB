@@ -18,7 +18,7 @@ namespace XML2DB
     {
         bool opt = false;
         public string connetionString = "";
-        Connection cn;
+        //Connection cn;
         private SqlConnection _cn;
         DataBaseToDGVUserCtrl dbt;
         xlsToDGVUserCtrl xdb;
@@ -59,7 +59,7 @@ namespace XML2DB
                     new Main();
 
 
-                    string[] _tb = cn.GetAllTables();
+                    string[] _tb = ODBConnection.GetAllTables();
 
                     dbt = new DataBaseToDGVUserCtrl(_tb, _tb.Length);
                     xdb = new xlsToDGVUserCtrl(_tb, _tb.Length);
@@ -99,19 +99,19 @@ namespace XML2DB
 
             //Connection to SQLServer
 
-            cn = new Connection(this.connetionString, dbname);
-            cn.OpenConection();
+            //cn = new Connection(this.connetionString, dbname);
+            //cn.OpenConection();
             Main main = new Main();
 
 
-            string[] tb = cn.GetAllTables();
+            string[] tb = ODBConnection.GetAllTables();
 
             dbt = new DataBaseToDGVUserCtrl(tb, tb.Length);
             xdb = new xlsToDGVUserCtrl(tb, tb.Length);
 
 
             dbt.Visible = true;
-            cn.CloseConnection();
+            //cn.CloseConnection();
             this.Dispose();
         }
 

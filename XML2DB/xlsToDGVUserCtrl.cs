@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace XML2DB
@@ -9,7 +10,7 @@ namespace XML2DB
 
         ExportImportClass dbx = new ExportImportClass();
 
-        Connection cn;
+        SqlConnection cn;
 
         ConnectionFrame cnx;
 

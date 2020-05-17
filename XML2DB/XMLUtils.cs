@@ -7,18 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using XML2DB;
 
 namespace XMLUtils
 {
     public static class XmlUtils
     {
-        /*static void printData(XmlDocument xmlDoc, List<String> NodeNames)
-        {
-            xmlDoc.Load(Environment.CurrentDirectory + @"../../../lib/examples/test.xml");
-            Console.WriteLine(xmlDoc.DocumentElement.SelectSingleNode(NodeNames[0]).InnerText);
-            // TODO: Test in Windows OS with WinForms
-        }*/
-
         public static DataSet getXmlData(String xmlDocPath)
         {
             DataSet xmlData = new DataSet();
@@ -39,13 +33,11 @@ namespace XMLUtils
         }
 
 
-        public static bool export2DB(DataTable xmlData, String connectionString, string TableName)
+        public static bool export2DB(DataTable xmlData, string TableName)
         {
             bool pass = false;
-            //string connectionString = @"Data Source = ServerName/Instance; Integrated Security=true; Initial Catalog=Database";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = ODBConnection.getConnection())
             {
-                connection.Open();
                 using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
                 {
                     foreach (DataColumn c in xmlData.Columns)

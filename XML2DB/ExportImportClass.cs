@@ -5,19 +5,16 @@ using XMLUtils;
 using ClosedXML.Excel;
 using System.IO;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using OfficeOpenXml;
 
 namespace XML2DB
 {
     class ExportImportClass
     {
-        Connection con = new Connection();
-        public static string connStr;
-
-
         public void TableToXML(string tbName)
         {
-            con.TableToXml(tbName);
+            ODBConnection.TableToXml(tbName);
         }
 
 
@@ -25,7 +22,7 @@ namespace XML2DB
         public void DGV2DB(DataGridView dgv, string tablename)
         {
             DataTable dt = this.DGV2DT(dgv, tablename);
-            con.DTtoSQL(dt, tablename);
+            XmlUtils.export2DB(dt, tablename);
         }
 
 

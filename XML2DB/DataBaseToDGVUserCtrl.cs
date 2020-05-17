@@ -19,7 +19,7 @@ namespace XML2DB
         Graphics gr = default(Graphics);
         Pen pen_draw = new Pen(Color.Black);
         SolidBrush sb = new SolidBrush(Color.SteelBlue);
-        Connection cn;
+        SqlConnection cn;
 
         ConnectionFrame cnx;
 

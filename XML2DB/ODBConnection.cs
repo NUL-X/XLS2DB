@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using DocumentFormat.OpenXml.Math;
+using XMLUtils;
 
 namespace XML2DB
 {
@@ -31,12 +33,40 @@ namespace XML2DB
             // TODO : Implement connection
             if (cn == null || cn.State == ConnectionState.Closed || cn.State == ConnectionState.Broken)
             {
-                using (cn = new SqlConnection(connectionString))
+                try
                 {
-                    cn.Open();
+                    using (cn = new SqlConnection(connectionString))
+                    {
+                        cn.Open();
+                    }
+                }
+                catch (SqlException sqle)
+                {
+                    Console.WriteLine(sqle);
                 }
             }
             return cn;
         }
+        
+        public static string[] GetAllTables()
+        {
+            List<string> result = new List<string>();
+            SqlCommand cmd = new SqlCommand("SELECT name FROM sys.Tables", ODBConnection.getConnection());
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+                result.Add(reader["name"].ToString());
+            return result.ToArray();
+        }
+        
+        public static void TableToXml(string tableName)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM " + tableName, ODBConnection.getConnection());
+            DataTable dt = new DataTable();
+            new SqlDataAdapter(cmd).Fill(dt);
+
+            dt.TableName = tableName;
+            dt.WriteXml(tableName + ".xml");
+        }
+        
     }
 }

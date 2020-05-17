@@ -120,7 +120,7 @@ namespace XML2DB
         {
             InitializeComponent();
             this.db2dg2.Hide();
-            ODBConnection.connectionString = "TEST:null:null";
+            //ODBConnection.connectionString = "TEST:null:null";
             MessageBox.Show(ODBConnection.connectionString, "info");
             // this.db2dg2.Parent = this;
             // used to control this Form from a user control 

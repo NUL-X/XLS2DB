@@ -6,7 +6,7 @@ using XMLUtils;
 
 namespace XML2DB
 {
-    class Connection
+    class _Connection
     {
         static string ConnectionString;
         public static SqlConnection con;
@@ -15,13 +15,13 @@ namespace XML2DB
 
         public object ConfigurationManager { get; private set; }
 
-        public Connection(string cs, string dbName)
+        public _Connection(string cs, string dbName)
         {
             ConnectionString = cs;
             DBname = dbName;
         }
 
-        public Connection()
+        public _Connection()
         {
         }
 
@@ -68,8 +68,7 @@ namespace XML2DB
 
         public void DTtoSQL(DataTable dt, string tblName)
         {
-            string cnStr = ConnectionString;
-            XmlUtils.export2DB(dt, cnStr, tblName);
+            XmlUtils.export2DB(dt, tblName);
         }
     }
 }
