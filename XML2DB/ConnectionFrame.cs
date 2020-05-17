@@ -50,6 +50,9 @@ namespace XML2DB
                 {
                     // is this where am I supposed to test it @Yassine-Ag ??
                     //this.connetionString = @"Data Source=. ;Initial Catalog=" + dbname + ";Integrated Security = true";
+                    
+                    
+                    ODBConnection.connectionString = $"{dbname}:{username}:{password}";
                     _cn = ODBConnection.getConnection();
                     
                     
@@ -60,6 +63,8 @@ namespace XML2DB
 
                     dbt = new DataBaseToDGVUserCtrl(_tb, _tb.Length);
                     xdb = new xlsToDGVUserCtrl(_tb, _tb.Length);
+                    dbt.Visible = true;
+                    return;
                 }
                 else if (auth.Equals("SQLServer Authentication"))
                 {
@@ -94,19 +99,19 @@ namespace XML2DB
 
             //Connection to SQLServer
 
-            //cn = new Connection(this.connetionString, dbname);
-            //cn.OpenConection();
-            //Main main = new Main();
+            cn = new Connection(this.connetionString, dbname);
+            cn.OpenConection();
+            Main main = new Main();
 
 
-            //string[] tb = cn.GetAllTables();
+            string[] tb = cn.GetAllTables();
 
-            //dbt = new DataBaseToDGVUserCtrl(tb, tb.Length);
-            //xdb = new xlsToDGVUserCtrl(tb, tb.Length);
+            dbt = new DataBaseToDGVUserCtrl(tb, tb.Length);
+            xdb = new xlsToDGVUserCtrl(tb, tb.Length);
 
 
-            //dbt.Visible = true;
-            //cn.CloseConnection();
+            dbt.Visible = true;
+            cn.CloseConnection();
             this.Dispose();
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using DocumentFormat.OpenXml.Math;
 
 namespace XML2DB
 {
@@ -9,27 +10,28 @@ namespace XML2DB
         private static SqlConnection cn = null;
         private static SqlCredential sc;
         private static string _host, _dbName, _user, _password;
-        public static bool winAuth = false;
-        private static string _connectionString
+        public static bool winAuth = true;
+
+        public static string connectionString
         {
-            get => winAuth ? $@"Data Source=. ;Initial Catalog=${_dbName};Integrated Security = true" : $@"Data Source=.;Initial Catalog=${_dbName};User ID=${_user};Password=${_password}";
+            get => winAuth ? $@"Data Source=.;Initial Catalog={_dbName};Integrated Security=true" : $@"Data Source=.;Initial Catalog={_dbName};User ID={_user};Password={_password}";
             set
             {
                 _dbName = value.Split(':')[0];
-                _user = winAuth ? value.Split(':')[1] : String.Empty;
-                _password = winAuth ? value.Split(':')[2] : String.Empty;
-                _ = winAuth
-                    ? $@"Data Source=.;Initial Catalog=${_dbName};Integrated Security = true"
-                    : $@"Data Source=.;Initial Catalog=${_dbName};User ID=${_user};Password=${_password}";
+                _user = winAuth ? String.Empty : value.Split(':')[1];
+                _password = winAuth ? String.Empty : value.Split(':')[2];
+                /*_connectionString = winAuth
+                    ? $@"Data Source=.;Initial Catalog={_dbName};Integrated Security = true"
+                    : $@"Data Source=.;Initial Catalog={_dbName};User ID=${_user};Password={_password}";*/
             }
         }
 
         public static SqlConnection getConnection()
         {
             // TODO : Implement connection
-            if (cn == null || cn.State == ConnectionState.Broken || cn.State == ConnectionState.Closed)
+            if (cn == null || cn.State == ConnectionState.Closed || cn.State == ConnectionState.Broken)
             {
-                using (cn = new SqlConnection(_connectionString))
+                using (cn = new SqlConnection(connectionString))
                 {
                     cn.Open();
                 }
