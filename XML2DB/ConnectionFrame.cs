@@ -19,6 +19,7 @@ namespace XML2DB
         bool opt = false;
         public string connetionString = "";
         Connection cn;
+        private SqlConnection _cn;
         DataBaseToDGVUserCtrl dbt;
         xlsToDGVUserCtrl xdb;
 
@@ -47,7 +48,18 @@ namespace XML2DB
             {
                 if (auth.Equals("Windows Authentication"))
                 {
-                    this.connetionString = @"Data Source=. ;Initial Catalog=" + dbname + ";Integrated Security = true";
+                    // is this where am I supposed to test it @Yassine-Ag ??
+                    //this.connetionString = @"Data Source=. ;Initial Catalog=" + dbname + ";Integrated Security = true";
+                    _cn = ODBConnection.getConnection();
+                    
+                    
+                    new Main();
+
+
+                    string[] _tb = cn.GetAllTables();
+
+                    dbt = new DataBaseToDGVUserCtrl(_tb, _tb.Length);
+                    xdb = new xlsToDGVUserCtrl(_tb, _tb.Length);
                 }
                 else if (auth.Equals("SQLServer Authentication"))
                 {
@@ -82,19 +94,19 @@ namespace XML2DB
 
             //Connection to SQLServer
 
-            cn = new Connection(this.connetionString, dbname);
-            cn.OpenConection();
-            Main main = new Main();
+            //cn = new Connection(this.connetionString, dbname);
+            //cn.OpenConection();
+            //Main main = new Main();
 
 
-            string[] tb = cn.GetAllTables();
+            //string[] tb = cn.GetAllTables();
 
-            dbt = new DataBaseToDGVUserCtrl(tb, tb.Length);
-            xdb = new xlsToDGVUserCtrl(tb, tb.Length);
+            //dbt = new DataBaseToDGVUserCtrl(tb, tb.Length);
+            //xdb = new xlsToDGVUserCtrl(tb, tb.Length);
 
 
             //dbt.Visible = true;
-            cn.CloseConnection();
+            //cn.CloseConnection();
             this.Dispose();
         }
 
