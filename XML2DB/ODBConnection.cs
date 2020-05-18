@@ -10,7 +10,6 @@ namespace XML2DB
     public class ODBConnection
     {
         private static SqlConnection cn = null;
-        private static SqlCredential sc;
         private static string _host, _dbName, _user, _password;
         public static bool winAuth = true;
 
@@ -33,10 +32,8 @@ namespace XML2DB
             // TODO : Implement connection
             if (cn == null || cn.State == ConnectionState.Closed || cn.State == ConnectionState.Broken)
             {
-                using (cn = new SqlConnection(connectionString))
-                {
-                    cn.Open();
-                }
+                cn = new SqlConnection(connectionString);
+                cn.Open();
             }
             return cn;
         }
@@ -48,15 +45,17 @@ namespace XML2DB
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
                 result.Add(reader["name"].ToString());
+            reader.Close();
             return result.ToArray();
         }
         
         public static void TableToXml(string tableName)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM " + tableName, ODBConnection.getConnection());
+            SqlCommand ps = new SqlCommand("SELECT * FROM @table_name", ODBConnection.getConnection());
+            ps.Parameters.AddWithValue("@table_name", tableName);
+            ps.Prepare();
             DataTable dt = new DataTable();
-            new SqlDataAdapter(cmd).Fill(dt);
-
+            new SqlDataAdapter(ps).Fill(dt);
             dt.TableName = tableName;
             dt.WriteXml(tableName + ".xml");
         }

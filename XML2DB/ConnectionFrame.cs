@@ -77,6 +77,7 @@ namespace XML2DB
                                                username + ";Password=" + password + "";
                     }
                 }*/
+                //ODBConnection.connectionString = $"{dbname}:{username}:{password}";
                 throw new NotImplementedException();
             }
 
